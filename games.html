@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html ng-app="mwl.calendar.docs">
+<html ng-app="app">
 	<head>
 		<meta charset="utf-8">
-		<title>ballendar</title>
+		<title>Israeli Leage</title>
 		<meta name="author" content="yaron">
 		<link rel="stylesheet" href="css/style.css"/>
 		<script src="node_modules/angular/angular.js"></script>
-		<script src="js/script.js"></script>
+		<script src="js/config.js"></script>
+		<script src="App/Controllers/teams.js"></script>
 		<script src="node_modules/bootstrap"></script>
 		<script src="node_modules/jquery"></script>
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
@@ -57,16 +58,19 @@
 						</select>
 					</nav><h2 class="section-title">תוצאות ליגת העל 2016/17 מחזור 1</h2>
 
-					<ul class="round-games">
+					<ul class="round-games" >
 
 						<li class="fc">
 							<article>
 
 								<ol class="fc">
-									<li>
-										<div class="table">
-											<a href="https://www.maccabi-tlv.co.il/" target="_blank" class="image"><img width="60" height="60" src="http://images.wcdn.co.il/1809846-53.png?crop=w54" alt="מכבי תל אביב" title="מכבי תל אביב"></a><h4 class="title"><a href="/team/739?league=157">מכבי תל אביב</a></h4>
-										</div>
+
+									<li ng-controller="israeliLeage">
+										<div ng-repeat="t in myTeams| filter: { name: 'מכבי תל אביב' }" class="table">
+											<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+											<p>
+												{{t.name}}
+											</p> </a>
 									</li>
 
 									<li>
@@ -80,11 +84,14 @@
 										" target="_blank">Open in Waze</a>
 									</li>
 
-									<li>
-										<div class="table">
-											<a href="http://www.hapoel-kfs.org.il/" target="_blank" class="image"><img width="60" height="60" src="images/Hapoelkfarsaba.png" alt="הפועל כפר-סבא" title="הפועל כפר-סבא"></a><h4 class="title"><a href="/team/3983?league=157">הפועל כפר-סבא</a></h4>
-										</div>
+									<li ng-controller="israeliLeage">
+										<div ng-repeat="t in myTeams| filter: { name: 'הפועל כפר-סבא' }" class="table">
+											<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+											<p>
+												{{t.name}}
+											</p> </a>
 									</li>
+
 								</ol>
 							</article>
 						</li>
@@ -95,10 +102,13 @@
 							<article>
 
 								<ol class="fc">
-									<li>
-										<div class="table">
-											<a href="https://ashkelonfootball.wordpress.com/" target="_blank" class="image"><img width="60" height="60" src="images/hapoelAshkelon.png" alt="הפועל אשקלון" title="הפועל אשקלון"></a><h4 class="title"><a href="/team/8137?league=157">הפועל אשקלון</a></h4>
-										</div>
+
+									<li ng-controller="israeliLeage">
+										<div ng-repeat="t in myTeams| filter: { name: 'הפועל אשקלון' }" class="table">
+											<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+											<p>
+												{{t.name}}
+											</p> </a>
 									</li>
 
 									<li>
@@ -110,11 +120,14 @@
 										</p>
 									</li>
 
-									<li>
-										<div class="table">
-											<a href="http://www.hhaifa.com/" target="_blank" class="image"><img width="60" height="60" src="http://images.wcdn.co.il/1809879-53.png?crop=w54" alt="הפועל חיפה" title="הפועל חיפה"></a><h4 class="title"><a href="/team/741?league=157">הפועל חיפה</a></h4>
-										</div>
+									<li ng-controller="israeliLeage">
+										<div ng-repeat="t in myTeams| filter: { name: 'הפועל חיפה' }" class="table">
+											<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+											<p>
+												{{t.name}}
+											</p> </a>
 									</li>
+
 								</ol>
 							</article>
 						</li>
@@ -125,10 +138,13 @@
 							<article>
 
 								<ol class="fc">
-									<li>
-										<div class="table">
-											<a href="http://iturank8.co.il/" target="_blank" class="image"><img width="60" height="60" src="http://images.wcdn.co.il/1809840-53.png?crop=w54" alt="עירוני קרית שמונה" title="עירוני קרית שמונה"></a><h4 class="title"><a href="/team/9707?league=157">עירוני קרית שמונה</a></h4>
-										</div>
+
+									<li ng-controller="israeliLeage">
+										<div ng-repeat="t in myTeams| filter: { name: 'עירוני קרית שמונה' }" class="table">
+											<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+											<p>
+												{{t.name}}
+											</p> </a>
 									</li>
 
 									<li>
@@ -140,11 +156,14 @@
 										</p>
 									</li>
 
-									<li>
-										<div class="table">
-											<a href="https://www.facebook.com/fcashdodofficial/" target="_blank" class="image"><img width="60" height="60" src="http://images.wcdn.co.il/1809881-53.png?crop=w54" alt="מ.ס. אשדוד" title="מ.ס. אשדוד"></a><h4 class="title"><a href="/team/749?league=157">מ.ס. אשדוד</a></h4>
-										</div>
+									<li ng-controller="israeliLeage">
+										<div ng-repeat="t in myTeams| filter: { name: 'מ.ס. אשדוד' }" class="table">
+											<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+											<p>
+												{{t.name}}
+											</p> </a>
 									</li>
+
 								</ol>
 							</article>
 						</li>
@@ -155,10 +174,13 @@
 							<article>
 
 								<ol class="fc">
-									<li>
-										<div class="table">
-											<a href="http://www.m-pt.co.il/" target="_blank" class="image"><img width="60" height="60" src="http://images.wcdn.co.il/1809860-53.png?crop=w54" alt="מכבי פתח תקוה" title="מכבי פתח תקוה"></a><h4 class="title"><a href="/team/744?league=157">מכבי פתח תקוה</a></h4>
-										</div>
+
+									<li ng-controller="israeliLeage">
+										<div ng-repeat="t in myTeams| filter: { name: 'מכבי פתח תקוה' }" class="table">
+											<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+											<p>
+												{{t.name}}
+											</p> </a>
 									</li>
 
 									<li>
@@ -170,11 +192,14 @@
 										</p>
 									</li>
 
-									<li>
-										<div class="table">
-											<a href="http://www.beitarfc.co.il/" target="_blank" class="image"><img width="60" height="60" src="http://images.wcdn.co.il/1809857-53.png?crop=w54" alt="בית&quot;ר ירושלים" title="בית&quot;ר ירושלים"></a><h4 class="title"><a href="/team/742?league=157">בית"ר ירושלים</a></h4>
-										</div>
+									<li ng-controller="israeliLeage">
+										<div ng-repeat="t in myTeams| filter: { name: 'ביתר ירושלים' }" class="table">
+											<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+											<p>
+												{{t.name}}
+											</p> </a>
 									</li>
+
 								</ol>
 							</article>
 						</li>
@@ -185,10 +210,13 @@
 							<article>
 
 								<ol class="fc">
-									<li>
-										<div class="table">
-											<a href="http://mhaifafc.com/" target="_blank" class="image"><img width="60" height="60" src="http://images.wcdn.co.il/1809824-53.png?crop=w54" alt="מכבי חיפה" title="מכבי חיפה"></a><h4 class="title"><a href="/team/740?league=157">מכבי חיפה</a></h4>
-										</div>
+
+									<li ng-controller="israeliLeage">
+										<div ng-repeat="t in myTeams| filter: { name: 'מכבי חיפה' }" class="table">
+											<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+											<p>
+												{{t.name}}
+											</p> </a>
 									</li>
 
 									<li>
@@ -198,48 +226,24 @@
 										<p class="time">
 											19:00
 										</p>
-										
-										<p><a href="http://stadium.mhaifafc.com/gameslist.asp" target="_blank">רכישת כרטיסים</a></p>
-										<p><a href="https://www.waze.com/he/livemap?zoom=17&lat=32.78322&lon=34.96551" target="_blank"><img src="images/waze_24px_1126637_easyicon.net.png"></a></p>
-										
-										
-									</li>
 
-									<li>
-										<div class="table">
-											<a href="http://www.htafc.co.il/" target="_blank" class="image"><img width="60" height="60" src="images/Hapoeltelaviv.png" alt="הפועל תל אביב" title="הפועל תל אביב"></a><h4 class="title"><a href="/team/738?league=157">הפועל תל אביב</a></h4>
-										</div>
-									</li>
-								</ol>
-							</article>
-						</li>
-
-						<hr>
-
-						<li class="fc">
-							<article>
-
-								<ol class="fc">
-									<li>
-										<div class="table">
-											<a href="http://www.hapoelb7.co.il/" target="_blank" class="image"><img width="60" height="60" src="http://images.wcdn.co.il/1809848-53.png?crop=w54" alt="הפועל באר שבע" title="הפועל באר שבע"></a><h4 class="title"><a href="/team/3987?league=157">הפועל באר שבע</a></h4>
-										</div>
-									</li>
-
-									<li>
-										<time datetime="2016-08-20 19:00">
-											20/08/16
-										</time><p class="stadium"></p>
-										<p class="time">
-											19:00
+										<p>
+											<a href="http://stadium.mhaifafc.com/gameslist.asp" target="_blank">רכישת כרטיסים</a>
 										</p>
+										<p>
+											<a href="https://www.waze.com/he/livemap?zoom=17&lat=32.78322&lon=34.96551" target="_blank"><img src="images/waze_24px_1126637_easyicon.net.png"></a>
+										</p>
+
 									</li>
 
-									<li>
-										<div class="table">
-											<a href="http://www.hapoel-raanana.co.il/" target="_blank" class="image"><img width="60" height="60" src="http://images.wcdn.co.il/1809869-53.png?crop=w54" alt="הפועל רעננה" title="הפועל רעננה"></a><h4 class="title"><a href="/team/8143?league=157">הפועל רעננה</a></h4>
-										</div>
+									<li ng-controller="israeliLeage">
+										<div ng-repeat="t in myTeams| filter: { name: 'הפועל תל אביב' }" class="table">
+											<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+											<p>
+												{{t.name}}
+											</p> </a>
 									</li>
+
 								</ol>
 							</article>
 						</li>
@@ -250,10 +254,13 @@
 							<article>
 
 								<ol class="fc">
-									<li>
-										<div class="table">
-											<a href="http://bnei-yehuda.net" target="_blank" class="image"><img width="60" height="60" src="images/Bneiyehuda.png" alt="בני יהודה תל-אביב" title="בני יהודה תל-אביב"></a><h4 class="title"><a href="/team/745?league=157">בני יהודה תל-אביב</a></h4>
-										</div>
+
+									<li ng-controller="israeliLeage">
+										<div ng-repeat="t in myTeams| filter: { name: 'הפועל באר שבע' }" class="table">
+											<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+											<p>
+												{{t.name}}
+											</p> </a>
 									</li>
 
 									<li>
@@ -265,11 +272,50 @@
 										</p>
 									</li>
 
-									<li>
-										<div class="table">
-											<a href="/team/4008?league=157" class="image"><img width="60" height="60" src="http://images.wcdn.co.il/1809875-53.png?crop=w54" alt="בני סכנין" title="בני סכנין"></a><h4 class="title"><a href="/team/4008?league=157">בני סכנין</a></h4>
-										</div>
+									<li ng-controller="israeliLeage">
+										<div ng-repeat="t in myTeams| filter: { name: 'הפועל רעננה' }" class="table">
+											<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+											<p>
+												{{t.name}}
+											</p> </a>
 									</li>
+
+								</ol>
+							</article>
+						</li>
+
+						<hr>
+
+						<li class="fc">
+							<article>
+
+								<ol class="fc">
+
+									<li ng-controller="israeliLeage">
+										<div ng-repeat="t in myTeams| filter: { name: 'בני יהודה' }" class="table">
+											<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+											<p>
+												{{t.name}}
+											</p> </a>
+									</li>
+
+									<li>
+										<time datetime="2016-08-20 19:00">
+											20/08/16
+										</time><p class="stadium"></p>
+										<p class="time">
+											19:00
+										</p>
+									</li>
+
+									<li ng-controller="israeliLeage">
+										<div ng-repeat="t in myTeams| filter: { name: 'בני סכנין' }" class="table">
+											<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+											<p>
+												{{t.name}}
+											</p> </a>
+									</li>
+
 								</ol>
 							</article>
 						</li>

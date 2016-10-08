@@ -65,7 +65,8 @@ table {
 }
 .common-table {
 	table-layout: fixed;
-	width: 100%;
+	width: 80%;
+	margin: 0 auto;
 }
 
 .common-table thead th {
@@ -104,10 +105,16 @@ section .round-games {
 li {
 	list-style: none;
 }
-.common-form, .section-title,.pre-title {
+.common-form, .section-title {
 	text-align: center;
 	margin: 1%;
 	color: #eaeaea;
+}
+.pre-title {
+	text-align: center;
+	margin: 1%;
+	color: #eaeaea;
+
 }
 .fc article {
 	width: 100%;

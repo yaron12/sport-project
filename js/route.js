@@ -37,4 +37,3 @@
 
 })();
 
-leageStatus.html

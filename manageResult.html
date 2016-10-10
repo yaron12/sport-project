@@ -18,7 +18,6 @@
 		<div class="wrap">
 			<div class="backImage">
 				<header>
-			
 
 					<div class="dateTime">
 						<iframe src="http://free.timeanddate.com/clock/i5bt8v2b/n1514/tlil/fceee/tct/pct/tt1/tw0/td2" frameborder="0" width="132" height="18" allowTransparency="true"></iframe>
@@ -37,12 +36,12 @@
 						<option value="">בחר מחזור <optgroup label="ליגת העל 2016/17"></optgroup><option value="round1">מחזור 1 <option value="round2">מחזור 2 <option value="round3">מחזור 3 <option value="round4">מחזור 4 <option value="round5">מחזור 5 <option value="round6">מחזור 6 <option value="round7">מחזור 7 <option value="round8">מחזור 8 <option value="round9">מחזור 9 <option value="round10">מחזור 10 <option value="round11">מחזור 11 <option value="round12">12 מחזור <option value="round13">מחזור 13 <option value="round14">מחזור 14 <option value="round15">מחזור 15 <option value="round16">מחזור 16 <option value="round17">מחזור 17 <option value="round18">מחזור 18 <option value="round19">מחזור 19 <option value="round20">מחזור 20 <option value="round21">מחזור 21 <option value="round22">מחזור 22 <option value="round23">מחזור 23 <option value="round24">מחזור 24 <option value="round25">מחזור 25 <option value="round26">מחזור 26
 					</select>
 
-<!--
+					<!--
 					<span>או</span>
 					<select>
-						<option value="">בחר קבוצה</option><option value="beitarYerushalaim">ביתר ירושלים</option><option value="bneiYehuda">בני יהודה</option><option value="bneiSachnin">בני סכנין</option><option value="hapoelAshkelon">הפועל אשקלון</option><option value="hapoelBeerSheva">הפועל באר שבע</option><option value="hapoelHaifa">הפועל חיפה</option><option value="hapoelKfarSaba">הפועל כפ"ס</option><option value="hapoelRaanana">הפועל רעננה</option><option value="hapoelTelAviv">הפועל תל אביב</option><option value="msAshdod">מ.ס. אשדוד</option><option value="maccabiHaifa">מכבי חיפה</option><option value="maccabiPetachTikva">מכבי פתח תקוה</option><option value="maccabiTelAviv">מכבי תל אביב</option><option value="eironiKiriatShmona">עירוני קרית שמונה</option>
+					<option value="">בחר קבוצה</option><option value="beitarYerushalaim">ביתר ירושלים</option><option value="bneiYehuda">בני יהודה</option><option value="bneiSachnin">בני סכנין</option><option value="hapoelAshkelon">הפועל אשקלון</option><option value="hapoelBeerSheva">הפועל באר שבע</option><option value="hapoelHaifa">הפועל חיפה</option><option value="hapoelKfarSaba">הפועל כפ"ס</option><option value="hapoelRaanana">הפועל רעננה</option><option value="hapoelTelAviv">הפועל תל אביב</option><option value="msAshdod">מ.ס. אשדוד</option><option value="maccabiHaifa">מכבי חיפה</option><option value="maccabiPetachTikva">מכבי פתח תקוה</option><option value="maccabiTelAviv">מכבי תל אביב</option><option value="eironiKiriatShmona">עירוני קרית שמונה</option>
 					</select>
--->
+					-->
 				</form>
 
 				<div ng-switch="round">
@@ -66,22 +65,25 @@
 														{{t.name}}
 													</p> </a>
 													<!--<input type="number">{{ teamGoals }}-->
-													
-														<div ng-controller="copyScore">
-															<form game="scoreForm">
-																<label>
-																	<input type="number" game="scoreGame"
-																	ng-model="score.game"
-																	ng-model-options="{ getterSetter: true }" min="0" max="20"/>
-																</label>
-															</form>
-															<pre>  <span ng-bind="score.game()"></span></pre>
-														</div>
+
+													<div ng-controller="copyScore">
+														<form game="scoreForm">
+															<label>
+																<input type="number" game="scoreGame"
+																ng-model="score.game"
+																ng-model-options="{ getterSetter: true }" min="0" max="20"/>
+															</label>
+														</form>
+														<pre>  <span ng-bind="score.game()"></span></pre>
+													</div>
 											</li>
 
 											<li>
-												<button type="button" class="btn btn-warning" ng-click="setResult()">
-													תוצאת המשחק
+												<button type="button" ng-click="setResult()">
+													קבע תוצאה
+												</button>
+												<button type="button" ng-click="resetResult()">
+													אפס תוצאה
 												</button>
 											</li>
 
@@ -92,15 +94,15 @@
 														{{t.name}}
 													</p> </a>
 													<div ng-controller="copyScore">
-															<form game="scoreForm">
-																<label>
-																	<input type="number" game="scoreGame"
-																	ng-model="score.game"
-																	ng-model-options="{ getterSetter: true }" min="0" max="20" />
-																</label>
-															</form>
-															<pre>  <span ng-bind="score.game()"></span></pre>
-														</div>
+														<form game="scoreForm">
+															<label>
+																<input type="number" game="scoreGame"
+																ng-model="score.game"
+																ng-model-options="{ getterSetter: true }" min="0" max="20" />
+															</label>
+														</form>
+														<pre>  <span ng-bind="score.game()"></span></pre>
+													</div>
 											</li>
 										</ol>
 									</article>
@@ -119,23 +121,19 @@
 													<p>
 														{{t.name}}
 													</p> </a>
+													<form>
+														<input type="number" ng-model="scoreTeam1" min="0" max="20">
+													</form>
+													<h1>{{scoreTeam1}}</h1>
 											</li>
 
-											<li >
-												<time datetime="2016-08-20 19:00">
-													20/08/16
-												</time>
-												<p class="time">
-													19:00
-												</p>
-												<div ng-repeat="t in myTeams| filter: { name: 'הפועל אשקלון' }">
-													<p>
-														<a href="{{t.tickets}}" target="_blank">רכישת כרטיסים</a>
-													</p>
-													<p>
-														<a href="{{t.waze}}" target="_blank"><img src="images/waze.png"></a>
-													</p>
-												</div>
+											<li>
+												<button type="button" ng-click="calc()">
+													קבע תוצאה
+												</button>
+												<button type="reset" ng-click="reset()" >
+													אפס תוצאה
+												</button>
 											</li>
 
 											<li >
@@ -144,6 +142,10 @@
 													<p>
 														{{t.name}}
 													</p> </a>
+													<form>
+														<input type="number" ng-model="scoreTeam2" min="0" max="20">
+													</form>
+													<h1>{{scoreTeam2}}</h1>
 											</li>
 
 										</ol>

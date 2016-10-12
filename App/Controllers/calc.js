@@ -23,15 +23,21 @@
 		team2.points = team2.points + 3;
 	}
 
-
    team1.gamesPlayed++;
    team2.gamesPlayed++;
    team1.goals = team1.goals + goals;
    team2.goals = team1.goals + goals;
    team1.goalsMinus = team1.goalsMinus - team2.goals;
    team2.goalsMinus = team2.goalsMinus - team1.goals;
-
 }
-})();
 
-goalsMinus
+ function save(){
+ 	$scope.saved = localStorage.setItem('???');
+ }
+ 
+ function reset(){
+ 	$scope.reset = clear???
+ }
+ 
+ 
+})();

@@ -20,9 +20,7 @@
 		}).when('/games', {
 			templateUrl : 'App/view/games.html',	
         
-/*		}).when('/contactus/:name/:age', {
-			templateUrl : 'app/views/contactus.html',
-			controller : "contactUs"
+/*	
 
 		}).when('/home', {
 			templateUrl : 'app/views/home.html',

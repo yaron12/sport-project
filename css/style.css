@@ -6,15 +6,11 @@ html {
 	background: url("../images/messi2.png") no-repeat center center fixed;
 	background-size: cover;
 
-	/*
-	 -webkit-background-size: cover;
-	 -moz-background-size: cover;
-	 -o-background-size: cover;
-	 */
 }
 body {
-	font-family: Arial, Helvetica, serif;
-	font-size: 100%;
+	font-family: Arial, Helvetica, serif ;
+	font-size: 100% ;
+	background-color: transparent !important;
 }
 .topHeader ul {
 	direction: rtl;

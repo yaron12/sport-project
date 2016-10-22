@@ -33,7 +33,13 @@
 									<p>
 										{{t.name}} ---
 									</p> </a>
-									
+
+									<div ng-controller="Controller2 as vm2">
+										<p ng-repeat="msg2 in vm2.messages2">
+											{{msg2.text}}
+										</p>
+									</div>
+
 							</li>
 
 							<li>

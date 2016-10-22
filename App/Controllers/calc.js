@@ -2,35 +2,35 @@
 	var app = angular.module("app")
 	app.controller("calc", calc);
 	
-	function calc(goals){
-		var team1 = ???
-		var team2 = ???
+	function calc(){
+		var scoreTeam1 = '$scope.scoreTeam1'
+		var scoreTeam2 = '$scope.scoreTeam2'
 		
-	if team1 > team2 {
-		team1.wins++;
-		team2.losses++;
-		team1.points = team1.points + 3;
+	if (scoreTeam1 > scoreTeam2) {
+		scoreTeam1.wins++;
+		scoreTeam2.losses++;
+		scoreTeam1.points = scoreTeam1.points + 3;
 	}
-	else if team1 = team2 {
-		team1.draws++;
-		team2.draws++;
-		team1.points++;
-		team2.points++;
+	else if (scoreTeam1 = scoreTeam2) {
+		scoreTeam1.draws++;
+		scoreTeam2.draws++;
+		scoreTeam1.points++;
+		scoreTeam2.points++;
 	}
 	else {
-		team2.wins++;
-		team1.losses++;
-		team2.points = team2.points + 3;
+		scoreTeam2.wins++;
+		scoreTeam1.losses++;
+		scoreTeam2.points = scoreTeam2.points + 3;
 	}
 
-   team1.gamesPlayed++;
-   team2.gamesPlayed++;
-   team1.goals = team1.goals + goals;
-   team2.goals = team1.goals + goals;
-   team1.goalsMinus = team1.goalsMinus - team2.goals;
-   team2.goalsMinus = team2.goalsMinus - team1.goals;
+   scoreTeam1.gamesPlayed++;
+   scoreTeam2.gamesPlayed++;
+   scoreTeam1.goals = scoreTeam1.goals + goals;
+   scoreTeam2.goals = scoreTeam1.goals + goals;
+   scoreTeam1.goalsMinus = scoreTeam1.goalsMinus - scoreTeam2.goals;
+   scoreTeam2.goalsMinus = scoreTeam2.goalsMinus - scoreTeam1.goals;
 }
-
+/*
  function save(){
  	$scope.saved = localStorage.setItem('???');
  }
@@ -38,6 +38,6 @@
  function reset(){
  	$scope.reset = clear???
  }
- 
+ */
  
 })();

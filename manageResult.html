@@ -1,24 +1,18 @@
 <!DOCTYPE html>
-<html ng-app="app" class="alert">
+<html ng-app="app">
 	<head>
 		<meta charset="utf-8">
 		<title>Israeli Leage</title>
 		<meta name="author" content="yaron">
 		<link rel="stylesheet" href="css/style.css"/>
-	    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> 
+		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 		<script src="node_modules/jquery/dist/jquery.min.js"></script>
-		<script src="node_modules/angular/angular.js"></script>
-		<script src="node_modules/angular-route/angular-route.js"></script>
-		<script src="js/config.js"></script>
-		<script src="App/Controllers/score.js"></script>
-		<script src="App/Controllers/teams.js"></script>
-		
+
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
 	</head>
 	<body>
 		<div class="wrap">
 			<div class="backImage">
-
 
 				<!-------------------------------------end header----------------------------------------->
 				<form class="section-title">
@@ -37,7 +31,7 @@
 
 				<div ng-switch="round">
 
-					<div ng-switch-when="round1">
+					<div ng-switch-when="round1" ng-model="finalData.round1">
 
 						<section class="rounds-section" >
 							<nav class="fc common-select-menu common-form" role="navigation"></nav><h2 class="section-title">תוצאות ליגת העל 2016/17 מחזור 1</h2>
@@ -55,18 +49,26 @@
 													<p>
 														{{t.name}}
 													</p> </a>
-													<!--<input type="number">{{ teamGoals }}-->
 
-													<div ng-controller="copyScore">
-														<form game="scoreForm">
-															<label>
-																<input type="number" game="scoreGame"
-																ng-model="score.game"
-																ng-model-options="{ getterSetter: true }" min="0" max="20"/>
-															</label>
-														</form>
-														<pre>  <span ng-bind="score.game()"></span></pre>
+
+
+													<div ng-controller="Controller1 as vm1">
+														<p ng-repeat="msg1 in vm1.messages1">
+															{{msg1.text}}
+														</p>
+														<p>
+															<input type="number" min="0" max="20" ng-model="vm1.text">
+															<button ng-click="vm1.postMessage()">
+																Post
+															</button>
+														</p>
 													</div>
+
+													<!--	<form>
+
+													<input type="number" ng-model="scoreTeam1" min="0" max="20">
+													</form> -->
+
 											</li>
 
 											<li>
@@ -84,16 +86,12 @@
 													<p>
 														{{t.name}}
 													</p> </a>
-													<div ng-controller="copyScore">
-														<form game="scoreForm">
-															<label>
-																<input type="number" game="scoreGame"
-																ng-model="score.game"
-																ng-model-options="{ getterSetter: true }" min="0" max="20" />
-															</label>
-														</form>
-														<pre>  <span ng-bind="score.game()"></span></pre>
-													</div>
+
+													<form>
+														<input type="number" ng-model="scoreTeam2" min="0" max="20">
+													</form>
+													<h1>{{scoreTeam2}}</h1>
+												</div>
 											</li>
 										</ol>
 									</article>
@@ -116,6 +114,7 @@
 														<input type="number" ng-model="scoreTeam1" min="0" max="20">
 													</form>
 													<h1>{{scoreTeam1}}</h1>
+												</div>
 											</li>
 
 											<li>
@@ -456,5 +455,16 @@
 				</footer>
 			</div>
 		</div>
+		<script src="node_modules/angular/angular.js"></script>
+		<script src="node_modules/angular-route/angular-route.js"></script>
+		<script src="node_modules/angular-local-storage/dist/angular-local-storage.js"></script>
+		<script src="js/config.js"></script>
+		<script src="App/Controllers/score.js"></script>
+		<script src="App/Controllers/teams.js"></script>
+		<script src="App/Services/setAndReset.js"></script>
+
+			
+
+
 	</body>
 </html>

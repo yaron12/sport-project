@@ -27,16 +27,16 @@
 
 						<ol class="fc">
 
-							<li >
+							<li>
 								<div ng-repeat="t in myTeams| filter: { name: 'מכבי תל אביב' }" class="table">
 									<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
 									<p>
 										{{t.name}} ---
 									</p> </a>
 
-									<div ng-controller="Controller2 as vm2">
-										<p ng-repeat="msg2 in vm2.messages2">
-											{{msg2.text}}
+									<div ng-controller="getLocalStorage">
+										<p>
+											{{scoreTeam1}}
 										</p>
 									</div>
 

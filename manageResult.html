@@ -43,36 +43,29 @@
 
 										<ol class="fc">
 
-											<li >
+											<li>
 												<div ng-repeat="t in myTeams| filter: { name: 'מכבי תל אביב' }" class="table">
 													<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
 													<p>
 														{{t.name}}
 													</p> </a>
-
-
-
+<!--
 													<div ng-controller="Controller1 as vm1">
 														<p ng-repeat="msg1 in vm1.messages1">
 															{{msg1.text}}
-														</p>
-														<p>
-															<input type="number" min="0" max="20" ng-model="vm1.text">
-															<button ng-click="vm1.postMessage()">
-																Post
-															</button>
-														</p>
+														</p>-->
+														
+														<form>
+														<input type="number" ng-model="scoreTeam1" min="0" max="20">
+													</form>
+													<h1>{{scoreTeam1}}</h1>
 													</div>
 
-													<!--	<form>
-
-													<input type="number" ng-model="scoreTeam1" min="0" max="20">
-													</form> -->
 
 											</li>
 
 											<li>
-												<button type="button" class="alert-success" ng-click="save()" ng-click="setResult()" >
+												<button type="button" class="alert-success" ng-click="setLocalStorage()">
 													קבע תוצאה
 												</button>
 												<button type="button" ng-click="resetResult()">
@@ -110,6 +103,7 @@
 													<p>
 														{{t.name}}
 													</p> </a>
+													
 													<form>
 														<input type="number" ng-model="scoreTeam1" min="0" max="20">
 													</form>
@@ -459,9 +453,9 @@
 		<script src="node_modules/angular-route/angular-route.js"></script>
 		<script src="node_modules/angular-local-storage/dist/angular-local-storage.js"></script>
 		<script src="js/config.js"></script>
-		<script src="App/Controllers/score.js"></script>
+		<script src="App/Controllers/setLocalStorage.js"></script>
 		<script src="App/Controllers/teams.js"></script>
-		<script src="App/Services/setAndReset.js"></script>
+
 
 			
 

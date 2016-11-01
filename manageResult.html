@@ -36,429 +36,425 @@
 						<section class="rounds-section" >
 							<nav class="fc common-select-menu common-form" role="navigation"></nav><h2 class="section-title">תוצאות ליגת העל 2016/17 מחזור 1</h2>
 
-							<ul class="round-games" ng-controller="israeliLeage">
+							
+								<ul class="round-games" ng-controller="israeliLeage">
 
-								<li class="fc">
-									<article>
+									<li class="fc">
+										<article>
 
-										<ol class="fc">
+											<ol class="fc">
 
-											<li>
-												<div ng-repeat="t in myTeams| filter: { name: 'מכבי תל אביב' }" class="table">
-													<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-													<p>
-														{{t.name}}
-													</p> </a>
-<!--
-													<div ng-controller="Controller1 as vm1">
+												<li>
+													<div ng-repeat="t in myTeams| filter: { name: 'מכבי תל אביב' }" class="table">
+														<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+														<p>
+															{{t.name}}
+														</p> </a>
+														<!--
+														<div ng-controller="Controller1 as vm1">
 														<p ng-repeat="msg1 in vm1.messages1">
-															{{msg1.text}}
+														{{msg1.text}}
 														</p>-->
-														
+
 														<form>
-														<input type="number" ng-model="scoreTeam1" min="0" max="20">
-													</form>
-													<h1>{{scoreTeam1}}</h1>
+															<input type="number" ng-model="scoreTeam1" min="0" max="20">
+														</form>
+														<h1>{{scoreTeam1}}</h1>
 													</div>
 
+												</li>
 
-											</li>
+												<li>
+													<button type="button" class="alert-success" ng-click="saveMachResult()">
+														קבע תוצאה
+													</button>
+													<button type="button" ng-click="resetResult()">
+														אפס תוצאה
+													</button>
+												</li>
 
-											<li>
-												<button type="button" class="alert-success" ng-click="setLocalStorage()">
-													קבע תוצאה
-												</button>
-												<button type="button" ng-click="resetResult()">
-													אפס תוצאה
-												</button>
-											</li>
+												<li >
+													<div ng-repeat="t in myTeams| filter: { name: 'הפועל כפר-סבא' }" class="table">
+														<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+														<p>
+															{{t.name}}
+														</p> </a>
 
-											<li >
-												<div ng-repeat="t in myTeams| filter: { name: 'הפועל כפר-סבא' }" class="table">
-													<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-													<p>
-														{{t.name}}
-													</p> </a>
+														<form>
+															<input type="number" ng-model="scoreTeam2" min="0" max="20">
+														</form>
+														<h1>{{scoreTeam2}}</h1>
+													</div>
+												</li>
+											</ol>
+										</article>
+									</li>
 
-													<form>
-														<input type="number" ng-model="scoreTeam2" min="0" max="20">
-													</form>
-													<h1>{{scoreTeam2}}</h1>
-												</div>
-											</li>
-										</ol>
-									</article>
-								</li>
+									<hr>
 
-								<hr>
+									<li class="fc">
+										<article>
 
-								<li class="fc">
-									<article>
+											<ol class="fc" >
 
-										<ol class="fc" >
+												<li >
+													<div ng-repeat="t in myTeams| filter: { name: 'הפועל אשקלון' }" class="table">
+														<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+														<p>
+															{{t.name}}
+														</p> </a>
 
-											<li >
-												<div ng-repeat="t in myTeams| filter: { name: 'הפועל אשקלון' }" class="table">
-													<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-													<p>
-														{{t.name}}
-													</p> </a>
-													
-													<form>
-														<input type="number" ng-model="scoreTeam1" min="0" max="20">
-													</form>
-													<h1>{{scoreTeam1}}</h1>
-												</div>
-											</li>
+														<form>
+															<input type="number" ng-model="scoreTeam1" min="0" max="20">
+														</form>
+														<h1>{{scoreTeam1}}</h1>
+													</div>
+												</li>
 
-											<li>
-												<button type="button" class="btn alert-success" ng-click="save()" ng-click="calc()">
-													קבע תוצאה
-												</button>
-												<button type="reset" ng-click="resetResult()" >
-													אפס תוצאה
-												</button>
-											</li>
+												<li>
+													<button type="button" class="btn alert-success" ng-click="save()" ng-click="calc()">
+														קבע תוצאה
+													</button>
+													<button type="reset" ng-click="resetResult()" >
+														אפס תוצאה
+													</button>
+												</li>
 
-											<li >
-												<div ng-repeat="t in myTeams| filter: { name: 'הפועל חיפה' }" class="table">
-													<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-													<p>
-														{{t.name}}
-													</p> </a>
-													<form>
-														<input type="number" ng-model="scoreTeam2" min="0" max="20">
-													</form>
-													<h1>{{scoreTeam2}}</h1>
-											</li>
+												<li >
+													<div ng-repeat="t in myTeams| filter: { name: 'הפועל חיפה' }" class="table">
+														<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+														<p>
+															{{t.name}}
+														</p> </a>
+														<form>
+															<input type="number" ng-model="scoreTeam2" min="0" max="20">
+														</form>
+														<h1>{{scoreTeam2}}</h1>
+												</li>
 
-										</ol>
-									</article>
-								</li>
+											</ol>
+										</article>
+									</li>
 
-								<hr>
+									<hr>
 
-								<li class="fc">
-									<article>
+									<li class="fc">
+										<article>
 
-										<ol class="fc">
+											<ol class="fc">
 
-											<li >
-												<div ng-repeat="t in myTeams| filter: { name: 'עירוני קרית שמונה' }" class="table">
-													<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-													<p>
-														{{t.name}}
-													</p> </a>
-											</li>
+												<li >
+													<div ng-repeat="t in myTeams| filter: { name: 'עירוני קרית שמונה' }" class="table">
+														<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+														<p>
+															{{t.name}}
+														</p> </a>
+												</li>
 
-											<li >
-												<time datetime="2016-08-20 19:00">
-													20/08/16
-												</time>
-												<p class="time">
-													19:00
-												</p>
-												<div ng-repeat="t in myTeams| filter: { name: 'עירוני קרית שמונה' }">
-													<p>
-														<a href="{{t.tickets}}" target="_blank">רכישת כרטיסים</a>
+												<li >
+													<time datetime="2016-08-20 19:00">
+														20/08/16
+													</time>
+													<p class="time">
+														19:00
 													</p>
-													<p>
-														<a href="{{t.waze}}" target="_blank"><img src="images/waze.png"></a>
+													<div ng-repeat="t in myTeams| filter: { name: 'עירוני קרית שמונה' }">
+														<p>
+															<a href="{{t.tickets}}" target="_blank">רכישת כרטיסים</a>
+														</p>
+														<p>
+															<a href="{{t.waze}}" target="_blank"><img src="images/waze.png"></a>
+														</p>
+													</div>
+												</li>
+
+												<li>
+													<div ng-repeat="t in myTeams| filter: { name: 'מ.ס אשדוד' }" class="table">
+														<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+														<p>
+															{{t.name}}
+														</p> </a>
+												</li>
+
+											</ol>
+										</article>
+									</li>
+
+									<hr>
+
+									<li class="fc">
+										<article>
+
+											<ol class="fc">
+
+												<li>
+													<div ng-repeat="t in myTeams| filter: { name: 'מכבי פתח תקוה' }" class="table">
+														<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+														<p>
+															{{t.name}}
+														</p> </a>
+												</li>
+
+												<li >
+													<time datetime="2016-08-20 19:00">
+														20/08/16
+													</time>
+													<p class="time">
+														19:00
 													</p>
-												</div>
-											</li>
+													<div ng-repeat="t in myTeams| filter: { name: 'מכבי פתח תקוה' }">
+														<p>
+															<a href="{{t.tickets}}" target="_blank">רכישת כרטיסים</a>
+														</p>
+														<p>
+															<a href="{{t.waze}}" target="_blank"><img src="images/waze.png"></a>
+														</p>
+													</div>
+												</li>
 
-											<li>
-												<div ng-repeat="t in myTeams| filter: { name: 'מ.ס אשדוד' }" class="table">
-													<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-													<p>
-														{{t.name}}
-													</p> </a>
-											</li>
+												<li >
+													<div ng-repeat="t in myTeams| filter: { name: 'ביתר ירושלים' }" class="table">
+														<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+														<p>
+															{{t.name}}
+														</p> </a>
+												</li>
 
-										</ol>
-									</article>
-								</li>
+											</ol>
+										</article>
+									</li>
 
-								<hr>
+									<hr>
 
-								<li class="fc">
-									<article>
+									<li class="fc">
+										<article>
 
-										<ol class="fc">
+											<ol class="fc">
 
-											<li>
-												<div ng-repeat="t in myTeams| filter: { name: 'מכבי פתח תקוה' }" class="table">
-													<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-													<p>
-														{{t.name}}
-													</p> </a>
-											</li>
+												<li >
+													<div ng-repeat="t in myTeams| filter: { name: 'מכבי חיפה' }" class="table">
+														<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+														<p>
+															{{t.name}}
+														</p> </a>
+												</li>
 
-											<li >
-												<time datetime="2016-08-20 19:00">
-													20/08/16
-												</time>
-												<p class="time">
-													19:00
-												</p>
-												<div ng-repeat="t in myTeams| filter: { name: 'מכבי פתח תקוה' }">
-													<p>
-														<a href="{{t.tickets}}" target="_blank">רכישת כרטיסים</a>
+												<li >
+													<time datetime="2016-08-20 19:00">
+														20/08/16
+													</time>
+													<p class="time">
+														19:00
 													</p>
-													<p>
-														<a href="{{t.waze}}" target="_blank"><img src="images/waze.png"></a>
+													<div ng-repeat="t in myTeams| filter: { name: 'מכבי חיפה' }">
+														<p>
+															<a href="{{t.tickets}}" target="_blank">רכישת כרטיסים</a>
+														</p>
+														<p>
+															<a href="{{t.waze}}" target="_blank"><img src="images/waze.png"></a>
+														</p>
+													</div>
+												</li>
+
+												<li >
+													<div ng-repeat="t in myTeams| filter: { name: 'הפועל תל אביב' }" class="table">
+														<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+														<p>
+															{{t.name}}
+														</p> </a>
+												</li>
+
+											</ol>
+										</article>
+									</li>
+
+									<hr>
+
+									<li class="fc">
+										<article>
+
+											<ol class="fc">
+
+												<li >
+													<div ng-repeat="t in myTeams| filter: { name: 'הפועל באר שבע' }" class="table">
+														<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+														<p>
+															{{t.name}}
+														</p> </a>
+												</li>
+
+												<li >
+													<time datetime="2016-08-20 19:00">
+														20/08/16
+													</time>
+													<p class="time">
+														19:00
 													</p>
-												</div>
-											</li>
+													<div ng-repeat="t in myTeams| filter: { name: 'הפועל באר שבע' }">
+														<p>
+															<a href="{{t.tickets}}" target="_blank">רכישת כרטיסים</a>
+														</p>
+														<p>
+															<a href="{{t.waze}}" target="_blank"><img src="images/waze.png"></a>
+														</p>
+													</div>
+												</li>
 
-											<li >
-												<div ng-repeat="t in myTeams| filter: { name: 'ביתר ירושלים' }" class="table">
-													<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-													<p>
-														{{t.name}}
-													</p> </a>
-											</li>
+												<li >
+													<div ng-repeat="t in myTeams| filter: { name: 'הפועל רעננה' }" class="table">
+														<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+														<p>
+															{{t.name}}
+														</p> </a>
+												</li>
 
-										</ol>
-									</article>
-								</li>
+											</ol>
+										</article>
+									</li>
 
-								<hr>
+									<hr>
 
-								<li class="fc">
-									<article>
+									<li class="fc">
+										<article>
 
-										<ol class="fc">
+											<ol class="fc">
 
-											<li >
-												<div ng-repeat="t in myTeams| filter: { name: 'מכבי חיפה' }" class="table">
-													<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-													<p>
-														{{t.name}}
-													</p> </a>
-											</li>
+												<li >
+													<div ng-repeat="t in myTeams| filter: { name: 'בני יהודה' }" class="table">
+														<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+														<p>
+															{{t.name}}
+														</p> </a>
+												</li>
 
-											<li >
-												<time datetime="2016-08-20 19:00">
-													20/08/16
-												</time>
-												<p class="time">
-													19:00
-												</p>
-												<div ng-repeat="t in myTeams| filter: { name: 'מכבי חיפה' }">
-													<p>
-														<a href="{{t.tickets}}" target="_blank">רכישת כרטיסים</a>
+												<li >
+													<time datetime="2016-08-20 19:00">
+														20/08/16
+													</time>
+													<p class="time">
+														19:00
 													</p>
-													<p>
-														<a href="{{t.waze}}" target="_blank"><img src="images/waze.png"></a>
-													</p>
-												</div>
-											</li>
+													<div ng-repeat="t in myTeams| filter: { name: 'בני יהודה' }">
+														<p>
+															<a href="{{t.tickets}}" target="_blank">רכישת כרטיסים</a>
+														</p>
+														<p>
+															<a href="{{t.waze}}" target="_blank"><img src="images/waze.png"></a>
+														</p>
+													</div>
+												</li>
 
-											<li >
-												<div ng-repeat="t in myTeams| filter: { name: 'הפועל תל אביב' }" class="table">
-													<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-													<p>
-														{{t.name}}
-													</p> </a>
-											</li>
+												<li >
+													<div ng-repeat="t in myTeams| filter: { name: 'בני סכנין' }" class="table">
+														<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+														<p>
+															{{t.name}}
+														</p> </a>
+												</li>
 
-										</ol>
-									</article>
-								</li>
+											</ol>
+										</article>
+									</li>
 
-								<hr>
+									<hr>
 
-								<li class="fc">
-									<article>
-
-										<ol class="fc">
-
-											<li >
-												<div ng-repeat="t in myTeams| filter: { name: 'הפועל באר שבע' }" class="table">
-													<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-													<p>
-														{{t.name}}
-													</p> </a>
-											</li>
-
-											<li >
-												<time datetime="2016-08-20 19:00">
-													20/08/16
-												</time>
-												<p class="time">
-													19:00
-												</p>
-												<div ng-repeat="t in myTeams| filter: { name: 'הפועל באר שבע' }">
-													<p>
-														<a href="{{t.tickets}}" target="_blank">רכישת כרטיסים</a>
-													</p>
-													<p>
-														<a href="{{t.waze}}" target="_blank"><img src="images/waze.png"></a>
-													</p>
-												</div>
-											</li>
-
-											<li >
-												<div ng-repeat="t in myTeams| filter: { name: 'הפועל רעננה' }" class="table">
-													<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-													<p>
-														{{t.name}}
-													</p> </a>
-											</li>
-
-										</ol>
-									</article>
-								</li>
-
-								<hr>
-
-								<li class="fc">
-									<article>
-
-										<ol class="fc">
-
-											<li >
-												<div ng-repeat="t in myTeams| filter: { name: 'בני יהודה' }" class="table">
-													<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-													<p>
-														{{t.name}}
-													</p> </a>
-											</li>
-
-											<li >
-												<time datetime="2016-08-20 19:00">
-													20/08/16
-												</time>
-												<p class="time">
-													19:00
-												</p>
-												<div ng-repeat="t in myTeams| filter: { name: 'בני יהודה' }">
-													<p>
-														<a href="{{t.tickets}}" target="_blank">רכישת כרטיסים</a>
-													</p>
-													<p>
-														<a href="{{t.waze}}" target="_blank"><img src="images/waze.png"></a>
-													</p>
-												</div>
-											</li>
-
-											<li >
-												<div ng-repeat="t in myTeams| filter: { name: 'בני סכנין' }" class="table">
-													<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-													<p>
-														{{t.name}}
-													</p> </a>
-											</li>
-
-										</ol>
-									</article>
-								</li>
-
-								<hr>
-
-							</ul>
+								</ul>
 						</section>
-
 					</div>
-					<div ng-switch-when="round2">
+				
+				<div ng-switch-when="round2">
 
-						222
-					</div>
-					<div ng-switch-when="round3">
+					222
+				</div>
+				<div ng-switch-when="round3">
 
-						333
-					</div>
-					<div ng-switch-when="round4">
+					333
+				</div>
+				<div ng-switch-when="round4">
 
-					</div>
-					<div ng-switch-when="round5">
+				</div>
+				<div ng-switch-when="round5">
 
-					</div>
-					<div ng-switch-when="round6">
+				</div>
+				<div ng-switch-when="round6">
 
-					</div>
-					<div ng-switch-when="round7">
+				</div>
+				<div ng-switch-when="round7">
 
-					</div>
-					<div ng-switch-when="round8">
+				</div>
+				<div ng-switch-when="round8">
 
-					</div>
-					<div ng-switch-when="round9">
+				</div>
+				<div ng-switch-when="round9">
 
-					</div>
-					<div ng-switch-when="round10">
+				</div>
+				<div ng-switch-when="round10">
 
-					</div>
-					<div ng-switch-when="round11">
+				</div>
+				<div ng-switch-when="round11">
 
-					</div>
-					<div ng-switch-when="round12">
+				</div>
+				<div ng-switch-when="round12">
 
-					</div>
-					<div ng-switch-when="round13">
+				</div>
+				<div ng-switch-when="round13">
 
-					</div>
-					<div ng-switch-when="round14">
+				</div>
+				<div ng-switch-when="round14">
 
-					</div>
-					<div ng-switch-when="round15">
+				</div>
+				<div ng-switch-when="round15">
 
-					</div>
-					<div ng-switch-when="round16">
+				</div>
+				<div ng-switch-when="round16">
 
-					</div>
-					<div ng-switch-when="round17">
+				</div>
+				<div ng-switch-when="round17">
 
-					</div>
-					<div ng-switch-when="round18">
+				</div>
+				<div ng-switch-when="round18">
 
-					</div>
-					<div ng-switch-when="round19">
+				</div>
+				<div ng-switch-when="round19">
 
-					</div>
-					<div ng-switch-when="round20">
+				</div>
+				<div ng-switch-when="round20">
 
-					</div>
-					<div ng-switch-when="round21">
+				</div>
+				<div ng-switch-when="round21">
 
-					</div>
-					<div ng-switch-when="round22">
+				</div>
+				<div ng-switch-when="round22">
 
-					</div>
-					<div ng-switch-when="round23">
+				</div>
+				<div ng-switch-when="round23">
 
-					</div>
-					<div ng-switch-when="round24">
+				</div>
+				<div ng-switch-when="round24">
 
-					</div>
-					<div ng-switch-when="round25">
+				</div>
+				<div ng-switch-when="round25">
 
-					</div>
-					<div ng-switch-when="round26">
-
-					</div>
+				</div>
+				<div ng-switch-when="round26">
 
 				</div>
 
-				<footer>
-					<p class="copyrighting">
-						&copy; Copyright  by yaron
-					</p>
-				</footer>
 			</div>
+
+			<footer>
+				<p class="copyrighting">
+					&copy; Copyright  by yaron
+				</p>
+			</footer>
+		</div>
 		</div>
 		<script src="node_modules/angular/angular.js"></script>
 		<script src="node_modules/angular-route/angular-route.js"></script>
 		<script src="node_modules/angular-local-storage/dist/angular-local-storage.js"></script>
 		<script src="js/config.js"></script>
-		<script src="App/Controllers/setLocalStorage.js"></script>
+
 		<script src="App/Controllers/teams.js"></script>
-
-
-			
-
 
 	</body>
 </html>

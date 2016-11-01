@@ -1,14 +1,15 @@
 (function() {
 	var app = angular.module("app");
-	app.controller("getLocalStorage");
-	
-  
+	app.controller("getLocalStorage",getLocalStorage);
 
-  	
+function getLocalStorage($scope) {
+		
+   
+  	var myData = JSON.parse(localStorage.getItem('myData'));
+	alert("Page is loaded");
 	
-	JSON.parse(localStorage.getItem("myData"));
 	
-	 
+	}
   
 })();
 
@@ -20,6 +21,7 @@ $window.onload = function() {
 };
 });
 
+JSON.parse(localStorage.getItem("myData"));
 
 JSON.parse(locaStroage.getItem("myData")) ;
 

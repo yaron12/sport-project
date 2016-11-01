@@ -4,6 +4,9 @@
 
     function israeliLeage($scope){
     	$scope.myTeams = teams;
+    	$scope.saveMachResult=function(){
+    		alert("")
+    	}
     }
     
 	var teams = [{

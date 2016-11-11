@@ -1,35 +1,46 @@
 (function() {
-	var app = angular.module("app")
+	var app = angular.module("app");
 	app.controller("israeliLeage", israeliLeage);
 
 	function israeliLeage($scope) {
 		$scope.myTeams = teams;
-		$scope.saveMachResult = function() {
-			console.log(rounds)
-			var goals = [{
-				myDatya : "computer",
-				myPassword : "888"
-			}];
+		// $scope.teamAScore = [];
+		// $scope.teamBScore = [];
+		$scope.saveMachResult = function(index) {
+			console.log(rounds);
+			// rounds[$scope.currentRound - 1][index].teamAScore = $scope.teamAScore[index];
+			// rounds[$scope.currentRound - 1][index].teamBScore = $scope.teamBScore[index];
 
-			localStorage.setItem("myData", JSON.stringify(goals));
+			console.log("save", $scope.matches)
+			var myData = JSON.parse(localStorage.getItem("myData"));
+			if (myData) {
+				myData[$scope.currentRound - 1] = $scope.matches;
+			} else {
+				localStorage.setItem("myData", JSON.stringify(rounds));
+			}
+
 		}
-		
+
 		$scope.resetResult = function() {
-		this.teamAScore = "";
-		this.teamBScore = "";
+			this.teamAScore = "";
+			this.teamBScore = "";
 		}
-		
+
 		$scope.getRound = function() {
-			$scope.matches = rounds[$scope.currentRound - 1]
+
+			var myData = JSON.parse(localStorage.getItem("myData"));
+			console.log(myData)
+			if (myData)
+				$scope.matches = myData[$scope.currentRound - 1]
+			else
+				$scope.matches = rounds[$scope.currentRound - 1];
+			console.log("$scope.matches", $scope.matches)
 		}
 	}
 
 	function Match(teamB, teamA) {
-		this.teamA = teamA
-		this.teamB = teamB
-		this.teamAScore = "-";
-		this.teamBScore = "-";
-
+		this.teamA = teamA;
+		this.teamB = teamB;
 	}
 
 	var teams = [{
@@ -159,7 +170,7 @@
 	var match33 = new Match(teams[11], teams[3]);
 	var match34 = new Match(teams[0], teams[4]);
 	var match35 = new Match(teams[6], teams[2]);
-6
+	6
 	var match36 = new Match(teams[12], teams[6]);
 	var match37 = new Match(teams[2], teams[0]);
 	var match38 = new Match(teams[4], teams[11]);
@@ -191,7 +202,7 @@
 	var match61 = new Match(teams[8], teams[4]);
 	var match62 = new Match(teams[13], teams[2]);
 	var match63 = new Match(teams[11], teams[0]);
-	
+
 	var match64 = new Match(teams[0], teams[0]);
 	var match65 = new Match(teams[0], teams[0]);
 	var match66 = new Match(teams[0], teams[0]);
@@ -199,7 +210,7 @@
 	var match68 = new Match(teams[0], teams[0]);
 	var match69 = new Match(teams[0], teams[0]);
 	var match70 = new Match(teams[0], teams[0]);
-	
+
 	var match71 = new Match(teams[0], teams[0]);
 	var match72 = new Match(teams[0], teams[0]);
 	var match73 = new Match(teams[0], teams[0]);
@@ -207,7 +218,7 @@
 	var match75 = new Match(teams[0], teams[0]);
 	var match76 = new Match(teams[0], teams[0]);
 	var match77 = new Match(teams[0], teams[0]);
-	
+
 	var match78 = new Match(teams[0], teams[0]);
 	var match79 = new Match(teams[0], teams[0]);
 	var match80 = new Match(teams[0], teams[0]);
@@ -215,7 +226,7 @@
 	var match82 = new Match(teams[0], teams[0]);
 	var match83 = new Match(teams[0], teams[0]);
 	var match84 = new Match(teams[0], teams[0]);
-	
+
 	var match85 = new Match(teams[0], teams[0]);
 	var match86 = new Match(teams[0], teams[0]);
 	var match87 = new Match(teams[0], teams[0]);
@@ -223,7 +234,7 @@
 	var match89 = new Match(teams[0], teams[0]);
 	var match90 = new Match(teams[0], teams[0]);
 	var match91 = new Match(teams[0], teams[0]);
-	
+
 	var match92 = new Match(teams[0], teams[0]);
 	var match93 = new Match(teams[0], teams[0]);
 	var match94 = new Match(teams[0], teams[0]);
@@ -231,7 +242,7 @@
 	var match96 = new Match(teams[0], teams[0]);
 	var match97 = new Match(teams[0], teams[0]);
 	var match98 = new Match(teams[0], teams[0]);
-	
+
 	var match99 = new Match(teams[0], teams[0]);
 	var match100 = new Match(teams[0], teams[0]);
 	var match101 = new Match(teams[0], teams[0]);
@@ -239,7 +250,7 @@
 	var match103 = new Match(teams[0], teams[0]);
 	var match104 = new Match(teams[0], teams[0]);
 	var match105 = new Match(teams[0], teams[0]);
-	
+
 	var match106 = new Match(teams[0], teams[0]);
 	var match107 = new Match(teams[0], teams[0]);
 	var match108 = new Match(teams[0], teams[0]);
@@ -318,158 +329,158 @@
 	var match181 = new Match(teams[0], teams[0]);
 	var match182 = new Match(teams[0], teams[0]);
 
-	var round1 = []
-	round1.push(match1)
-	round1.push(match2)
-	round1.push(match3)
-	round1.push(match4)
-	round1.push(match5)
-	round1.push(match6)
-	round1.push(match7)
+	var round1 = [];
+	round1.push(match1);
+	round1.push(match2);
+	round1.push(match3);
+	round1.push(match4);
+	round1.push(match5);
+	round1.push(match6);
+	round1.push(match7);
 
-	var round2 = []
-	round2.push(match8)
-	round2.push(match9)
-	round2.push(match10)
-	round2.push(match11)
-	round2.push(match12)
-	round2.push(match13)
-	round2.push(match14)
+	var round2 = [];
+	round2.push(match8);
+	round2.push(match9);
+	round2.push(match10);
+	round2.push(match11);
+	round2.push(match12);
+	round2.push(match13);
+	round2.push(match14);
 
-	var round3 = []
-	round3.push(match15)
-	round3.push(match16)
-	round3.push(match17)
-	round3.push(match18)
-	round3.push(match19)
-	round3.push(match20)
-	round3.push(match21)
+	var round3 = [];
+	round3.push(match15);
+	round3.push(match16);
+	round3.push(match17);
+	round3.push(match18);
+	round3.push(match19);
+	round3.push(match20);
+	round3.push(match21);
 
-	var round4 = []
-	round4.push(match22)
-	round4.push(match23)
-	round4.push(match24)
-	round4.push(match25)
-	round4.push(match26)
-	round4.push(match27)
-	round4.push(match28)
+	var round4 = [];
+	round4.push(match22);
+	round4.push(match23);
+	round4.push(match24);
+	round4.push(match25);
+	round4.push(match26);
+	round4.push(match27);
+	round4.push(match28);
 
-	var round5 = []
-	round5.push(match29)
-	round5.push(match30)
-	round5.push(match31)
-	round5.push(match32)
-	round5.push(match33)
-	round5.push(match34)
-	round5.push(match35)
+	var round5 = [];
+	round5.push(match29);
+	round5.push(match30);
+	round5.push(match31);
+	round5.push(match32);
+	round5.push(match33);
+	round5.push(match34);
+	round5.push(match35);
 
-	var round6 = []
-	round6.push(match36)
-	round6.push(match37)
-	round6.push(match38)
-	round6.push(match39)
-	round6.push(match40)
-	round6.push(match41)
-	round6.push(match42)
+	var round6 = [];
+	round6.push(match36);
+	round6.push(match37);
+	round6.push(match38);
+	round6.push(match39);
+	round6.push(match40);
+	round6.push(match41);
+	round6.push(match42);
 
-	var round7 = []
-	round7.push(match43)
-	round7.push(match44)
-	round7.push(match45)
-	round7.push(match46)
-	round7.push(match47)
-	round7.push(match48)
-	round7.push(match49)
+	var round7 = [];
+	round7.push(match43);
+	round7.push(match44);
+	round7.push(match45);
+	round7.push(match46);
+	round7.push(match47);
+	round7.push(match48);
+	round7.push(match49);
 
-	var round8 = []
-	round8.push(match50)
-	round8.push(match51)
-	round8.push(match52)
-	round8.push(match53)
-	round8.push(match54)
-	round8.push(match55)
-	round8.push(match56)
+	var round8 = [];
+	round8.push(match50);
+	round8.push(match51);
+	round8.push(match52);
+	round8.push(match53);
+	round8.push(match54);
+	round8.push(match55);
+	round8.push(match56);
 
-	var round9 = []
+	var round9 = [];
 	round9.push(match57)
-	round9.push(match58)
-	round9.push(match59)
-	round9.push(match60)
-	round9.push(match61)
-	round9.push(match62)
-	round9.push(match63)
+	round9.push(match58);
+	round9.push(match59);
+	round9.push(match60);
+	round9.push(match61);
+	round9.push(match62);
+	round9.push(match63);
 
-	var round10 = []
-	round10.push(match64)
-	round10.push(match65)
-	round10.push(match66)
-	round10.push(match67)
-	round10.push(match68)
-	round10.push(match69)
-	round10.push(match70)
+	var round10 = [];
+	round10.push(match64);
+	round10.push(match65);
+	round10.push(match66);
+	round10.push(match67);
+	round10.push(match68);
+	round10.push(match69);
+	round10.push(match70);
 
-	var round11 = []
-	round11.push(match71)
-	round11.push(match72)
-	round11.push(match73)
-	round11.push(match74)
-	round11.push(match75)
-	round11.push(match76)
-	round11.push(match77)
+	var round11 = [];
+	round11.push(match71);
+	round11.push(match72);
+	round11.push(match73);
+	round11.push(match74);
+	round11.push(match75);
+	round11.push(match76);
+	round11.push(match77);
 
-	var round12 = []
-	round12.push(match78)
-	round12.push(match79)
-	round12.push(match80)
-	round12.push(match81)
-	round12.push(match82)
-	round12.push(match83)
-	round12.push(match84)
+	var round12 = [];
+	round12.push(match78);
+	round12.push(match79);
+	round12.push(match80);
+	round12.push(match81);
+	round12.push(match82);
+	round12.push(match83);
+	round12.push(match84);
 
-	var round13 = []
-	round13.push(match85)
-	round13.push(match86)
-	round13.push(match87)
-	round13.push(match88)
-	round13.push(match89)
-	round13.push(match90)
-	round13.push(match91)
+	var round13 = [];
+	round13.push(match85);
+	round13.push(match86);
+	round13.push(match87);
+	round13.push(match88);
+	round13.push(match89);
+	round13.push(match90);
+	round13.push(match91);
 
-	var round14 = []
-	round14.push(match92)
-	round14.push(match93)
-	round14.push(match94)
-	round14.push(match95)
-	round14.push(match96)
-	round14.push(match97)
-	round14.push(match98)
+	var round14 = [];
+	round14.push(match92);
+	round14.push(match93);
+	round14.push(match94);
+	round14.push(match95);
+	round14.push(match96);
+	round14.push(match97);
+	round14.push(match98);
 
-	var round15 = []
-	round15.push(match99)
-	round15.push(match100)
-	round15.push(match101)
-	round15.push(match102)
-	round15.push(match103)
-	round15.push(match104)
-	round15.push(match105)
+	var round15 = [];
+	round15.push(match99);
+	round15.push(match100);
+	round15.push(match101);
+	round15.push(match102);
+	round15.push(match103);
+	round15.push(match104);
+	round15.push(match105);
 
-	var round16 = []
-	round16.push(match106)
-	round16.push(match107)
-	round16.push(match108)
-	round16.push(match109)
-	round16.push(match110)
-	round16.push(match111)
-	round16.push(match112)
+	var round16 = [];
+	round16.push(match106);
+	round16.push(match107);
+	round16.push(match108);
+	round16.push(match109);
+	round16.push(match110);
+	round16.push(match111);
+	round16.push(match112);
 
-	var round17 = []
-	round17.push(match113)
-	round17.push(match114)
-	round17.push(match115)
-	round17.push(match116)
-	round17.push(match117)
-	round17.push(match118)
-	round17.push(match119)
+	var round17 = [];
+	round17.push(match113);
+	round17.push(match114);
+	round17.push(match115);
+	round17.push(match116);
+	round17.push(match117);
+	round17.push(match118);
+	round17.push(match119);
 
 	var round18 = []
 	round18.push(match120)
@@ -579,12 +590,13 @@
 	rounds.push(round24);
 	rounds.push(round25);
 	rounds.push(round26);
+	/*
+	 //press enter instead of click the button
+	 document.getElementById('myInput').onkeypress = function(e) {
+	 if (e.keyCode == 13) {
+	 document.getElementById('addByEnter').click();
+	 }
+	 }
 
-	//press enter instead of click the button
-	document.getElementById('myInput').onkeypress = function(e) {
-		if (e.keyCode == 13) {
-			document.getElementById('addByEnter').click();
-		}
-	}
-	
+	 */
 })();

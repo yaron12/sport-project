@@ -19,6 +19,7 @@
 					<nav class="fc common-select-menu common-form" role="navigation"></nav><h2 class="section-title">תוצאות ליגת העל 2016/17</h2>
 
 					<ul class="round-games" ng-controller="israeliLeage">
+					
 						<div class="inputRound">
 							<input type="number" id="myInput" placeholder="מחזור" min="1" max="26" ng-model="currentRound" class="btn"/>
 <!--
@@ -63,7 +64,7 @@
 						<li class="fc">
 							<article>
 								<ol class="fc">
-									<div ng-repeat="match in matches" class="table">
+									<div ng-repeat="match in matches track by $index" class="table">
 										<li>
 
 											<a href="{{match.teamA.link}}" target="_blank"> <img ng-src="img/{{match.teamA.img}}" width="60" height="60" title="{{match.teamA.name}}">
@@ -71,13 +72,13 @@
 												{{match.teamA.name}}
 											</p> </a>
 											<form>
-												<input type="number" ng-model="teamAScore" min="0" max="20" id="teamAScore">
+												<input type="number" ng-model="match.teamAScore" min="0" max="20" id="teamAScore">
 											</form>
 											<h1>{{teamAScore}}</h1>
 										</li>
 
 										<li>
-											<button type="button" class="alert-success" ng-click="saveMachResult()">
+											<button type="button" class="alert-success" ng-click="saveMachResult($index)">
 												קבע תוצאה
 											</button>
 											<button type="button" ng-click="resetResult()">
@@ -92,7 +93,7 @@
 												{{match.teamB.name}}
 											</p> </a>
 											<form>
-												<input type="number" ng-model="teamBScore" min="0" max="20">
+												<input type="number" ng-model="match.teamBScore" min="0" max="20">
 											</form>
 											<h1>{{teamBScore}}</h1>
 										</li>
@@ -102,7 +103,11 @@
 								</ol>
 							</article>
 						</li>
-
+						
+					</ul>
+				</section>
+			</div>
+			
 						<!--
 						<li class="fc">
 						<article>
@@ -412,9 +417,10 @@
 						</article>
 						</li>
 						-->
-					</ul>
-				</section>
-			</div>
+
+
+
+
 			<!--
 			<form class="section-title">
 			<h2>בחר מחזור</h2>
@@ -519,7 +525,6 @@
 		</div>
 		<script src="node_modules/angular/angular.js"></script>
 		<script src="node_modules/angular-route/angular-route.js"></script>
-		<script src="node_modules/angular-local-storage/dist/angular-local-storage.js"></script>
 		<script src="js/config.js"></script>
 		<script src="App/Controllers/teams.js"></script>
 	</body>

@@ -1,10 +1,26 @@
+<div ng-controller="news" data-ng-init="getData()">
+	
+	<ul >
+		<li ng-repeat="d in data" style="color: white">
+			<h5>Name:</h5>{{d.name}} 
+			<h5>Email:</h5>{{d.email}}
+			<h5>img:</h5><img ng-src="img/{{d.Image}}" width="60" height="60" title="{{d.name}}">
+			<h5>url</h5>{{d.url}}
+			<h5>alt</h5>{{d.alt}}
+			<h5>timestamp</h5>{{d.timestamp}}
+			<h5>resourceId</h5>{{d.resourceId}}
+			<a href="{{d.href}}" target="_blank"></a>
+			<h5>text</h5>{{d.text}}
+		</li>
+	</ul>
+</div>
 <div>
-<li ng-controller="israeliLeage">
-										<div ng-repeat="t in myTeams" class="table">
-											<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-											<p>
-												{{t.name}}
-											</p> </a>
-									</li>
-			</div>
-		</div>
+	<li ng-controller="israeliLeage">
+		<div ng-repeat="t in myTeams" class="table">
+			<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+			<p>
+				{{t.name}}
+			</p> </a>
+	</li>
+</div>
+</div>

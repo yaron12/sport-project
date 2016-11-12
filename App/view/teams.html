@@ -2,15 +2,17 @@
 	
 	<ul >
 		<li ng-repeat="d in data" style="color: white">
-			<h5>Name:</h5>{{d.name}} 
-			<h5>Email:</h5>{{d.email}}
+
 			<h5>img:</h5><img ng-src="img/{{d.Image}}" width="60" height="60" title="{{d.name}}">
 			<h5>url</h5>{{d.url}}
 			<h5>alt</h5>{{d.alt}}
-			<h5>timestamp</h5>{{d.timestamp}}
 			<h5>resourceId</h5>{{d.resourceId}}
 			<a href="{{d.href}}" target="_blank"></a>
 			<h5>text</h5>{{d.text}}
+			<h3></h3>{{d.Gray}}
+			
+			
+
 		</li>
 	</ul>
 </div>
@@ -24,3 +26,5 @@
 	</li>
 </div>
 </div>
+ <!--
+ 	<p>Gray link:</p>{{Gray link}}

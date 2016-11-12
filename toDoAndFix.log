@@ -1,10 +1,8 @@
- fix bootstrap & jquery src
 
  connection all the controllers
- fix bottom table score
  route with animations
  goals minus calc
  sort leagestatus acording points
- css absolute copyright
- orgenize route js file
  order by points
+ delete getLocalStorage
+ localstorage work until F5

@@ -17,7 +17,6 @@
 			function error(response) {
 				$scope.data = response.data;
 			};
-			 
 		};
 		
 	};

@@ -30,14 +30,5 @@
    teamAScore.goalsMinus = teamAScore.goalsMinus - teamBScore.goals;
    teamBScore.goalsMinus = teamBScore.goalsMinus - teamAScore.goals;
 }
-/*
- function save(){
- 	$scope.saved = localStorage.setItem('???');
- }
- 
- function reset(){
- 	$scope.reset = clear???
- }
- */
  
 })();

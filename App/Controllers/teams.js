@@ -19,6 +19,36 @@
 				localStorage.setItem("myData", JSON.stringify(rounds));
 			}
 
+	function calc(){
+		var teamAScore = '$scope.teamAScore';
+		var teamBScore = '$scope.teamBScore';
+		
+	if (match.teamAScore > match.teamBScore) {
+		teamAScore.wins++;
+		teamBScore.losses++;
+		teamAScore.points = teamAScore.points + 3;
+	}
+	else if (teamAScore = teamBScore) {
+		teamAScore.draws++;
+		teamBScore.draws++;
+		teamAScore.points++;
+		teamBScore.points++;
+	}
+	else {
+		teamBScore.wins++;
+		teamAScore.losses++;
+		teamBScore.points = teamBScore.points + 3;
+	}
+
+   teamAScore.gamesPlayed++;
+   teamBScore.gamesPlayed++;
+   teamAScore.goals = teamAScore.goals + goals;
+   teamBScore.goals = teamAScore.goals + goals;
+   teamAScore.goalsMinus = teamAScore.goalsMinus - teamBScore.goals;
+   teamBScore.goalsMinus = teamBScore.goalsMinus - teamAScore.goals;
+   console.log("points",points);
+}
+
 		}
 
 		$scope.resetResult = function() {
@@ -202,132 +232,142 @@
 	var match61 = new Match(teams[8], teams[4]);
 	var match62 = new Match(teams[13], teams[2]);
 	var match63 = new Match(teams[11], teams[0]);
-
-	var match64 = new Match(teams[0], teams[0]);
-	var match65 = new Match(teams[0], teams[0]);
-	var match66 = new Match(teams[0], teams[0]);
-	var match67 = new Match(teams[0], teams[0]);
-	var match68 = new Match(teams[0], teams[0]);
-	var match69 = new Match(teams[0], teams[0]);
-	var match70 = new Match(teams[0], teams[0]);
-
-	var match71 = new Match(teams[0], teams[0]);
-	var match72 = new Match(teams[0], teams[0]);
-	var match73 = new Match(teams[0], teams[0]);
-	var match74 = new Match(teams[0], teams[0]);
-	var match75 = new Match(teams[0], teams[0]);
-	var match76 = new Match(teams[0], teams[0]);
-	var match77 = new Match(teams[0], teams[0]);
-
-	var match78 = new Match(teams[0], teams[0]);
-	var match79 = new Match(teams[0], teams[0]);
-	var match80 = new Match(teams[0], teams[0]);
-	var match81 = new Match(teams[0], teams[0]);
-	var match82 = new Match(teams[0], teams[0]);
-	var match83 = new Match(teams[0], teams[0]);
-	var match84 = new Match(teams[0], teams[0]);
-
-	var match85 = new Match(teams[0], teams[0]);
-	var match86 = new Match(teams[0], teams[0]);
-	var match87 = new Match(teams[0], teams[0]);
-	var match88 = new Match(teams[0], teams[0]);
-	var match89 = new Match(teams[0], teams[0]);
-	var match90 = new Match(teams[0], teams[0]);
-	var match91 = new Match(teams[0], teams[0]);
-
-	var match92 = new Match(teams[0], teams[0]);
-	var match93 = new Match(teams[0], teams[0]);
-	var match94 = new Match(teams[0], teams[0]);
-	var match95 = new Match(teams[0], teams[0]);
-	var match96 = new Match(teams[0], teams[0]);
-	var match97 = new Match(teams[0], teams[0]);
-	var match98 = new Match(teams[0], teams[0]);
-
-	var match99 = new Match(teams[0], teams[0]);
-	var match100 = new Match(teams[0], teams[0]);
-	var match101 = new Match(teams[0], teams[0]);
-	var match102 = new Match(teams[0], teams[0]);
-	var match103 = new Match(teams[0], teams[0]);
-	var match104 = new Match(teams[0], teams[0]);
-	var match105 = new Match(teams[0], teams[0]);
-
-	var match106 = new Match(teams[0], teams[0]);
-	var match107 = new Match(teams[0], teams[0]);
-	var match108 = new Match(teams[0], teams[0]);
-	var match109 = new Match(teams[0], teams[0]);
-	var match110 = new Match(teams[0], teams[0]);
-	var match111 = new Match(teams[0], teams[0]);
-	var match112 = new Match(teams[0], teams[0]);
-	var match113 = new Match(teams[0], teams[0]);
-	var match114 = new Match(teams[0], teams[0]);
-	var match115 = new Match(teams[0], teams[0]);
-	var match116 = new Match(teams[0], teams[0]);
-	var match117 = new Match(teams[0], teams[0]);
-	var match118 = new Match(teams[0], teams[0]);
-	var match119 = new Match(teams[0], teams[0]);
-	var match120 = new Match(teams[0], teams[0]);
-	var match121 = new Match(teams[0], teams[0]);
-	var match122 = new Match(teams[0], teams[0]);
-	var match123 = new Match(teams[0], teams[0]);
-	var match124 = new Match(teams[0], teams[0]);
-	var match125 = new Match(teams[0], teams[0]);
-	var match126 = new Match(teams[0], teams[0]);
-	var match127 = new Match(teams[0], teams[0]);
-	var match128 = new Match(teams[0], teams[0]);
-	var match129 = new Match(teams[0], teams[0]);
-	var match130 = new Match(teams[0], teams[0]);
-	var match131 = new Match(teams[0], teams[0]);
-	var match132 = new Match(teams[0], teams[0]);
-	var match133 = new Match(teams[0], teams[0]);
-	var match134 = new Match(teams[0], teams[0]);
-	var match135 = new Match(teams[0], teams[0]);
-	var match136 = new Match(teams[0], teams[0]);
-	var match137 = new Match(teams[0], teams[0]);
-	var match138 = new Match(teams[0], teams[0]);
-	var match139 = new Match(teams[0], teams[0]);
-	var match140 = new Match(teams[0], teams[0]);
-	var match141 = new Match(teams[0], teams[0]);
-	var match142 = new Match(teams[0], teams[0]);
-	var match143 = new Match(teams[0], teams[0]);
-	var match144 = new Match(teams[0], teams[0]);
-	var match145 = new Match(teams[0], teams[0]);
-	var match146 = new Match(teams[0], teams[0]);
-	var match147 = new Match(teams[0], teams[0]);
-	var match148 = new Match(teams[0], teams[0]);
-	var match149 = new Match(teams[0], teams[0]);
-	var match150 = new Match(teams[0], teams[0]);
-	var match151 = new Match(teams[0], teams[0]);
-	var match152 = new Match(teams[0], teams[0]);
-	var match153 = new Match(teams[0], teams[0]);
-	var match154 = new Match(teams[0], teams[0]);
-	var match155 = new Match(teams[0], teams[0]);
-	var match156 = new Match(teams[0], teams[0]);
-	var match157 = new Match(teams[0], teams[0]);
-	var match158 = new Match(teams[0], teams[0]);
-	var match159 = new Match(teams[0], teams[0]);
-	var match160 = new Match(teams[0], teams[0]);
-	var match161 = new Match(teams[0], teams[0]);
-	var match162 = new Match(teams[0], teams[0]);
-	var match163 = new Match(teams[0], teams[0]);
-	var match164 = new Match(teams[0], teams[0]);
-	var match165 = new Match(teams[0], teams[0]);
-	var match166 = new Match(teams[0], teams[0]);
-	var match167 = new Match(teams[0], teams[0]);
-	var match168 = new Match(teams[0], teams[0]);
-	var match169 = new Match(teams[0], teams[0]);
-	var match170 = new Match(teams[0], teams[0]);
-	var match171 = new Match(teams[0], teams[0]);
-	var match172 = new Match(teams[0], teams[0]);
-	var match173 = new Match(teams[0], teams[0]);
-	var match174 = new Match(teams[0], teams[0]);
-	var match175 = new Match(teams[0], teams[0]);
-	var match176 = new Match(teams[0], teams[0]);
-	var match177 = new Match(teams[0], teams[0]);
-	var match178 = new Match(teams[0], teams[0]);
-	var match179 = new Match(teams[0], teams[0]);
-	var match180 = new Match(teams[0], teams[0]);
-	var match181 = new Match(teams[0], teams[0]);
-	var match182 = new Match(teams[0], teams[0]);
+    10
+	var match64 = new Match(teams[6], teams[13]);
+	var match65 = new Match(teams[3], teams[7]);
+	var match66 = new Match(teams[2], teams[8]);
+	var match67 = new Match(teams[4], teams[10]);
+	var match68 = new Match(teams[12], teams[11]);
+	var match69 = new Match(teams[1], teams[5]);
+	var match70 = new Match(teams[9], teams[0]);
+    11
+	var match71 = new Match(teams[9], teams[11]);
+	var match72 = new Match(teams[7], teams[4]);
+	var match73 = new Match(teams[8], teams[6]);
+	var match74 = new Match(teams[5], teams[3]);
+	var match75 = new Match(teams[10], teams[2]);
+	var match76 = new Match(teams[1], teams[12]);
+	var match77 = new Match(teams[13], teams[0]);
+    12
+	var match78 = new Match(teams[4], teams[5]);
+	var match79 = new Match(teams[2], teams[7]);
+	var match80 = new Match(teams[3], teams[1]);
+	var match81 = new Match(teams[11], teams[13]);
+	var match82 = new Match(teams[6], teams[10]);
+	var match83 = new Match(teams[9], teams[12]);
+	var match84 = new Match(teams[0], teams[8]);
+    13
+	var match85 = new Match(teams[13], teams[9]);
+	var match86 = new Match(teams[5], teams[2]);
+	var match87 = new Match(teams[12], teams[3]);
+	var match88 = new Match(teams[8], teams[11]);
+	var match89 = new Match(teams[7], teams[6]);
+	var match90 = new Match(teams[1], teams[4]);
+	var match91 = new Match(teams[10], teams[0]);
+    14
+	var match92 = new Match(teams[12], teams[13]);
+	var match93 = new Match(teams[8], teams[9]);
+	var match94 = new Match(teams[10], teams[11]);
+	var match95 = new Match(teams[7], teams[0]);
+	var match96 = new Match(teams[5], teams[6]);
+	var match97 = new Match(teams[1], teams[2]);
+	var match98 = new Match(teams[3], teams[4]);
+    15
+	var match99 = new Match(teams[4], teams[12]);
+	var match100 = new Match(teams[2], teams[3]);
+	var match101 = new Match(teams[6], teams[1]);
+	var match102 = new Match(teams[0], teams[5]);
+	var match103 = new Match(teams[11], teams[7]);
+	var match104 = new Match(teams[9], teams[10]);
+	var match105 = new Match(teams[13], teams[8]);
+    16
+	var match106 = new Match(teams[12], teams[8]);
+	var match107 = new Match(teams[10], teams[13]);
+	var match108 = new Match(teams[7], teams[9]);
+	var match109 = new Match(teams[5], teams[11]);
+	var match110 = new Match(teams[1], teams[0]);
+	var match111 = new Match(teams[3], teams[6]);
+	var match112 = new Match(teams[4], teams[2]);
+	17
+	var match113 = new Match(teams[2], teams[12]);
+	var match114 = new Match(teams[6], teams[4]);
+	var match115 = new Match(teams[0], teams[3]);
+	var match116 = new Match(teams[11], teams[1]);
+	var match117 = new Match(teams[9], teams[5]);
+	var match118 = new Match(teams[13], teams[7]);
+	var match119 = new Match(teams[8], teams[10]);
+	18
+	var match120 = new Match(teams[12], teams[10]);
+	var match121 = new Match(teams[7], teams[8]);
+	var match122 = new Match(teams[5], teams[13]);
+	var match123 = new Match(teams[1], teams[9]);
+	var match124 = new Match(teams[3], teams[11]);
+	var match125 = new Match(teams[4], teams[0]);
+	var match126 = new Match(teams[2], teams[6]);
+	19
+	var match127 = new Match(teams[6], teams[12]);
+	var match128 = new Match(teams[0], teams[2]);
+	var match129 = new Match(teams[11], teams[4]);
+	var match130 = new Match(teams[9], teams[3]);
+	var match131 = new Match(teams[13], teams[1]);
+	var match132 = new Match(teams[8], teams[5]);
+	var match133 = new Match(teams[10], teams[7]);
+	20
+	var match134 = new Match(teams[12], teams[7]);
+	var match135 = new Match(teams[5], teams[10]);
+	var match136 = new Match(teams[1], teams[8]);
+	var match137 = new Match(teams[3], teams[13]);
+	var match138 = new Match(teams[4], teams[9]);
+	var match139 = new Match(teams[2], teams[11]);
+	var match140 = new Match(teams[6], teams[0]);
+	21
+	var match141 = new Match(teams[0], teams[12]);
+	var match142 = new Match(teams[11], teams[6]);
+	var match143 = new Match(teams[9], teams[2]);
+	var match144 = new Match(teams[13], teams[4]);
+	var match145 = new Match(teams[8], teams[3]);
+	var match146 = new Match(teams[10], teams[1]);
+	var match147 = new Match(teams[7], teams[5]);
+	22
+	var match148 = new Match(teams[12], teams[5]);
+	var match149 = new Match(teams[1], teams[7]);
+	var match150 = new Match(teams[3], teams[10]);
+	var match151 = new Match(teams[4], teams[8]);
+	var match152 = new Match(teams[2], teams[13]);
+	var match153 = new Match(teams[6], teams[9]);
+	var match154 = new Match(teams[0], teams[11]);
+	23
+	var match155 = new Match(teams[11], teams[12]);
+	var match156 = new Match(teams[0], teams[9]);
+	var match157 = new Match(teams[13], teams[6]);
+	var match158 = new Match(teams[8], teams[2]);
+	var match159 = new Match(teams[10], teams[4]);
+	var match160 = new Match(teams[7], teams[3]);
+	var match161 = new Match(teams[5], teams[1]);
+	24
+	var match162 = new Match(teams[12], teams[1]);
+	var match163 = new Match(teams[3], teams[5]);
+	var match164 = new Match(teams[4], teams[7]);
+	var match165 = new Match(teams[2], teams[10]);
+	var match166 = new Match(teams[6], teams[8]);
+	var match167 = new Match(teams[0], teams[13]);
+	var match168 = new Match(teams[11], teams[9]);
+	25
+	var match169 = new Match(teams[12], teams[9]);
+	var match170 = new Match(teams[13], teams[11]);
+	var match171 = new Match(teams[8], teams[0]);
+	var match172 = new Match(teams[10], teams[6]);
+	var match173 = new Match(teams[7], teams[2]);
+	var match174 = new Match(teams[5], teams[4]);
+	var match175 = new Match(teams[1], teams[3]);
+	26
+	var match176 = new Match(teams[3], teams[12]);
+	var match177 = new Match(teams[4], teams[1]);
+	var match178 = new Match(teams[2], teams[5]);
+	var match179 = new Match(teams[6], teams[7]);
+	var match180 = new Match(teams[0], teams[10]);
+	var match181 = new Match(teams[11], teams[8]);
+	var match182 = new Match(teams[9], teams[13]);
 
 	var round1 = [];
 	round1.push(match1);

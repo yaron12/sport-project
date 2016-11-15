@@ -1,22 +1,26 @@
+
 <div ng-controller="news" data-ng-init="getData()">
 	
 	<ul >
 		<li ng-repeat="d in data" style="color: white">
-
 			<h5>img:</h5><img ng-src="img/{{d.Image}}" width="60" height="60" title="{{d.name}}">
 			<h5>url</h5>{{d.url}}
 			<h5>alt</h5>{{d.alt}}
 			<h5>resourceId</h5>{{d.resourceId}}
-			<a href="{{d.href}}" target="_blank"></a>
+			<a href="{{d.href}}" target="_blank">F14b 11</a>
 			<h5>text</h5>{{d.text}}
 			<h3></h3>{{d.Gray}}
-			
-			
-
+			<li ng-repeat="e in d.group">
+							<h5>text22</h5>{{e.text}}
+						</li>
+<ul>
 		</li>
 	</ul>
+	</ul>
 </div>
+
 <div>
+
 	<li ng-controller="israeliLeage">
 		<div ng-repeat="t in myTeams" class="table">
 			<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
@@ -26,5 +30,6 @@
 	</li>
 </div>
 </div>
+
  <!--
  	<p>Gray link:</p>{{Gray link}}

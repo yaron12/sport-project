@@ -32,3 +32,13 @@
 }
  
 })();
+
+/*
+ * 				gamesPlayed = "";
+				wins = "";
+				draws = "";
+				losses = "";
+				goals = "";
+				goalsMinus = "";
+				points = "";
+ */

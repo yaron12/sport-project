@@ -4,5 +4,4 @@
  goals minus calc
  sort leagestatus acording points
  order by points
- delete getLocalStorage
  localstorage work until F5

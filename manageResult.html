@@ -19,40 +19,9 @@
 					<nav class="fc common-select-menu common-form" role="navigation"></nav><h2 class="section-title">תוצאות ליגת העל 2016/17</h2>
 
 					<ul class="round-games" ng-controller="israeliLeage">
-					
+
 						<div class="inputRound">
 							<input type="number" id="myInput" placeholder="מחזור" min="1" max="26" ng-model="currentRound" class="btn"/>
-<!--
-							<b>/</b>
-							<select name="rounds" ng-model="currentRound" class="btn-primary">
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5"></option>
-								<option value="6"></option>
-								<option value="7"></option>
-								<option value="8"></option>
-								<option value="9"></option>
-								<option value="10"></option>
-								<option value="11"></option>
-								<option value="12"></option>
-								<option value="13"></option>
-								<option value="14"></option>
-								<option value="15"></option>
-								<option value="16"></option>
-								<option value="17"></option>
-								<option value="18"></option>
-								<option value="19"></option>
-								<option value="20"></option>
-								<option value="21"></option>
-								<option value="22"></option>
-								<option value="23"></option>
-								<option value="24"></option>
-								<option value="25"></option>
-								<option value="26"></option>
-							</select>
--->
 							<br />
 							<br />
 							<button ng-click="getRound()" class="btn-success" id="addByEnter">
@@ -98,424 +67,17 @@
 											<h4>{{match.teamBScore}}</h4>
 										</li>
 										<hr />
+									
 									</div>
-
+	<div><button ng-click="resetAllResult()">אפס תוצאות כל המשחקים</button></div>
 								</ol>
 							</article>
 						</li>
-						
+
 					</ul>
 				</section>
 			</div>
 			
-						<!--
-						<li class="fc">
-						<article>
-
-						<ol class="fc">
-
-						<li>
-						<div >
-
-						<form>
-						<input type="number" ng-model="scoreTeam1" min="0" max="20">
-						</form>
-
-						</div>
-
-						</li>
-
-						<li>
-						<button type="button" class="alert-success" ng-click="saveMachResult()">
-						קבע תוצאה
-						</button>
-						<button type="button" ng-click="resetResult()">
-						אפס תוצאה
-						</button>
-						</li>
-
-						<li >
-						<div ng-repeat="t in myTeams| filter: { name: 'הפועל כפר-סבא' }" class="table">
-						<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-						<p>
-						{{t.name}}
-						</p> </a>
-
-						<form>
-						<input type="number" ng-model="scoreTeam2" min="0" max="20">
-						</form>
-						<h1>{{scoreTeam2}}</h1>
-						</div>
-						</li>
-						</ol>
-						</article>
-						</li>
-
-						<hr>
-
-						<li class="fc">
-						<article>
-
-						<ol class="fc" >
-
-						<li >
-						<div ng-repeat="t in myTeams| filter: { name: 'הפועל אשקלון' }" class="table">
-						<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-						<p>
-						{{t.name}}
-						</p> </a>
-
-						<form>
-						<input type="number" ng-model="scoreTeam1" min="0" max="20">
-						</form>
-						<h1>{{scoreTeam1}}</h1>
-						</div>
-						</li>
-
-						<li>
-						<button type="button" class="btn alert-success" ng-click="save()" ng-click="calc()">
-						קבע תוצאה
-						</button>
-						<button type="reset" ng-click="resetResult()" >
-						אפס תוצאה
-						</button>
-						</li>
-
-						<li >
-						<div ng-repeat="t in myTeams| filter: { name: 'הפועל חיפה' }" class="table">
-						<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-						<p>
-						{{t.name}}
-						</p> </a>
-						<form>
-						<input type="number" ng-model="scoreTeam2" min="0" max="20">
-						</form>
-						<h1>{{scoreTeam2}}</h1>
-						</li>
-
-						</ol>
-						</article>
-						</li>
-
-						<hr>
-
-						<li class="fc">
-						<article>
-
-						<ol class="fc">
-
-						<li >
-						<div ng-repeat="t in myTeams| filter: { name: 'עירוני קרית שמונה' }" class="table">
-						<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-						<p>
-						{{t.name}}
-						</p> </a>
-						</li>
-
-						<li >
-						<time datetime="2016-08-20 19:00">
-						20/08/16
-						</time>
-						<p class="time">
-						19:00
-						</p>
-						<div ng-repeat="t in myTeams| filter: { name: 'עירוני קרית שמונה' }">
-						<p>
-						<a href="{{t.tickets}}" target="_blank">רכישת כרטיסים</a>
-						</p>
-						<p>
-						<a href="{{t.waze}}" target="_blank"><img src="images/waze.png"></a>
-						</p>
-						</div>
-						</li>
-
-						<li>
-						<div ng-repeat="t in myTeams| filter: { name: 'מ.ס אשדוד' }" class="table">
-						<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-						<p>
-						{{t.name}}
-						</p> </a>
-						</li>
-
-						</ol>
-						</article>
-						</li>
-
-						<hr>
-
-						<li class="fc">
-						<article>
-
-						<ol class="fc">
-
-						<li>
-						<div ng-repeat="t in myTeams| filter: { name: 'מכבי פתח תקוה' }" class="table">
-						<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-						<p>
-						{{t.name}}
-						</p> </a>
-						</li>
-
-						<li >
-						<time datetime="2016-08-20 19:00">
-						20/08/16
-						</time>
-						<p class="time">
-						19:00
-						</p>
-						<div ng-repeat="t in myTeams| filter: { name: 'מכבי פתח תקוה' }">
-						<p>
-						<a href="{{t.tickets}}" target="_blank">רכישת כרטיסים</a>
-						</p>
-						<p>
-						<a href="{{t.waze}}" target="_blank"><img src="images/waze.png"></a>
-						</p>
-						</div>
-						</li>
-
-						<li >
-						<div ng-repeat="t in myTeams| filter: { name: 'ביתר ירושלים' }" class="table">
-						<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-						<p>
-						{{t.name}}
-						</p> </a>
-						</li>
-
-						</ol>
-						</article>
-						</li>
-
-						<hr>
-
-						<li class="fc">
-						<article>
-
-						<ol class="fc">
-
-						<li >
-						<div ng-repeat="t in myTeams| filter: { name: 'מכבי חיפה' }" class="table">
-						<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-						<p>
-						{{t.name}}
-						</p> </a>
-						</li>
-
-						<li >
-						<time datetime="2016-08-20 19:00">
-						20/08/16
-						</time>
-						<p class="time">
-						19:00
-						</p>
-						<div ng-repeat="t in myTeams| filter: { name: 'מכבי חיפה' }">
-						<p>
-						<a href="{{t.tickets}}" target="_blank">רכישת כרטיסים</a>
-						</p>
-						<p>
-						<a href="{{t.waze}}" target="_blank"><img src="images/waze.png"></a>
-						</p>
-						</div>
-						</li>
-
-						<li >
-						<div ng-repeat="t in myTeams| filter: { name: 'הפועל תל אביב' }" class="table">
-						<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-						<p>
-						{{t.name}}
-						</p> </a>
-						</li>
-
-						</ol>
-						</article>
-						</li>
-
-						<hr>
-
-						<li class="fc">
-						<article>
-
-						<ol class="fc">
-
-						<li >
-						<div ng-repeat="t in myTeams| filter: { name: 'הפועל באר שבע' }" class="table">
-						<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-						<p>
-						{{t.name}}
-						</p> </a>
-						</li>
-
-						<li >
-						<time datetime="2016-08-20 19:00">
-						20/08/16
-						</time>
-						<p class="time">
-						19:00
-						</p>
-						<div ng-repeat="t in myTeams| filter: { name: 'הפועל באר שבע' }">
-						<p>
-						<a href="{{t.tickets}}" target="_blank">רכישת כרטיסים</a>
-						</p>
-						<p>
-						<a href="{{t.waze}}" target="_blank"><img src="images/waze.png"></a>
-						</p>
-						</div>
-						</li>
-
-						<li >
-						<div ng-repeat="t in myTeams| filter: { name: 'הפועל רעננה' }" class="table">
-						<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-						<p>
-						{{t.name}}
-						</p> </a>
-						</li>
-
-						</ol>
-						</article>
-						</li>
-
-						<hr>
-
-						<li class="fc">
-						<article>
-
-						<ol class="fc">
-
-						<li >
-						<div ng-repeat="t in myTeams| filter: { name: 'בני יהודה' }" class="table">
-						<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-						<p>
-						{{t.name}}
-						</p> </a>
-						</li>
-
-						<li >
-						<time datetime="2016-08-20 19:00">
-						20/08/16
-						</time>
-						<p class="time">
-						19:00
-						</p>
-						<div ng-repeat="t in myTeams| filter: { name: 'בני יהודה' }">
-						<p>
-						<a href="{{t.tickets}}" target="_blank">רכישת כרטיסים</a>
-						</p>
-						<p>
-						<a href="{{t.waze}}" target="_blank"><img src="images/waze.png"></a>
-						</p>
-						</div>
-						</li>
-
-						<li >
-						<div ng-repeat="t in myTeams| filter: { name: 'בני סכנין' }" class="table">
-						<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
-						<p>
-						{{t.name}}
-						</p> </a>
-						</li>
-
-						</ol>
-						</article>
-						</li>
-						-->
-
-
-
-
-			<!--
-			<form class="section-title">
-			<h2>בחר מחזור</h2>
-			<select ng-model="round">
-			<option value="">בחר מחזור <optgroup label="ליגת העל 2016/17"></optgroup><option value="round1">מחזור 1 <option value="round2">מחזור 2 <option value="round3">מחזור 3 <option value="round4">מחזור 4 <option value="round5">מחזור 5 <option value="round6">מחזור 6 <option value="round7">מחזור 7 <option value="round8">מחזור 8 <option value="round9">מחזור 9 <option value="round10">מחזור 10 <option value="round11">מחזור 11 <option value="round12">12 מחזור <option value="round13">מחזור 13 <option value="round14">מחזור 14 <option value="round15">מחזור 15 <option value="round16">מחזור 16 <option value="round17">מחזור 17 <option value="round18">מחזור 18 <option value="round19">מחזור 19 <option value="round20">מחזור 20 <option value="round21">מחזור 21 <option value="round22">מחזור 22 <option value="round23">מחזור 23 <option value="round24">מחזור 24 <option value="round25">מחזור 25 <option value="round26">מחזור 26
-			</select>
-			<span>או</span>
-			<select>
-			<option value="">בחר קבוצה</option><option value="beitarYerushalaim">ביתר ירושלים</option><option value="bneiYehuda">בני יהודה</option><option value="bneiSachnin">בני סכנין</option><option value="hapoelAshkelon">הפועל אשקלון</option><option value="hapoelBeerSheva">הפועל באר שבע</option><option value="hapoelHaifa">הפועל חיפה</option><option value="hapoelKfarSaba">הפועל כפ"ס</option><option value="hapoelRaanana">הפועל רעננה</option><option value="hapoelTelAviv">הפועל תל אביב</option><option value="msAshdod">מ.ס. אשדוד</option><option value="maccabiHaifa">מכבי חיפה</option><option value="maccabiPetachTikva">מכבי פתח תקוה</option><option value="maccabiTelAviv">מכבי תל אביב</option><option value="eironiKiriatShmona">עירוני קרית שמונה</option>
-			</select>
-			</form>
-
-			<div ng-switch="round">
-			<div ng-switch-when="round1">
-			111
-			</div>
-			<div ng-switch-when="round2">
-			222
-			</div>
-			<div ng-switch-when="round3">
-
-			333
-			</div>
-			<div ng-switch-when="round4">
-
-			</div>
-			<div ng-switch-when="round5">
-
-			</div>
-			<div ng-switch-when="round6">
-
-			</div>
-			<div ng-switch-when="round7">
-
-			</div>
-			<div ng-switch-when="round8">
-
-			</div>
-			<div ng-switch-when="round9">
-
-			</div>
-			<div ng-switch-when="round10">
-
-			</div>
-			<div ng-switch-when="round11">
-
-			</div>
-			<div ng-switch-when="round12">
-
-			</div>
-			<div ng-switch-when="round13">
-
-			</div>
-			<div ng-switch-when="round14">
-
-			</div>
-			<div ng-switch-when="round15">
-
-			</div>
-			<div ng-switch-when="round16">
-
-			</div>
-			<div ng-switch-when="round17">
-
-			</div>
-			<div ng-switch-when="round18">
-
-			</div>
-			<div ng-switch-when="round19">
-
-			</div>
-			<div ng-switch-when="round20">
-
-			</div>
-			<div ng-switch-when="round21">
-
-			</div>
-			<div ng-switch-when="round22">
-
-			</div>
-			<div ng-switch-when="round23">
-
-			</div>
-			<div ng-switch-when="round24">
-
-			</div>
-			<div ng-switch-when="round25">
-
-			</div>
-			<div ng-switch-when="round26">
-
-			</div>
-			</div>
-			-->
-
 			<footer>
 				<p class="copyrighting">
 					&copy; Copyright  by yaron
@@ -529,3 +91,439 @@
 		<script src="App/Controllers/teams.js"></script>
 	</body>
 </html>
+<!--
+<li class="fc">
+<article>
+
+<ol class="fc">
+
+<li>
+<div >
+
+<form>
+<input type="number" ng-model="scoreTeam1" min="0" max="20">
+</form>
+
+</div>
+
+</li>
+
+<li>
+<button type="button" class="alert-success" ng-click="saveMachResult()">
+קבע תוצאה
+</button>
+<button type="button" ng-click="resetResult()">
+אפס תוצאה
+</button>
+</li>
+
+<li >
+<div ng-repeat="t in myTeams| filter: { name: 'הפועל כפר-סבא' }" class="table">
+<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+<p>
+{{t.name}}
+</p> </a>
+
+<form>
+<input type="number" ng-model="scoreTeam2" min="0" max="20">
+</form>
+<h1>{{scoreTeam2}}</h1>
+</div>
+</li>
+</ol>
+</article>
+</li>
+
+<hr>
+
+<li class="fc">
+<article>
+
+<ol class="fc" >
+
+<li >
+<div ng-repeat="t in myTeams| filter: { name: 'הפועל אשקלון' }" class="table">
+<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+<p>
+{{t.name}}
+</p> </a>
+
+<form>
+<input type="number" ng-model="scoreTeam1" min="0" max="20">
+</form>
+<h1>{{scoreTeam1}}</h1>
+</div>
+</li>
+
+<li>
+<button type="button" class="btn alert-success" ng-click="save()" ng-click="calc()">
+קבע תוצאה
+</button>
+<button type="reset" ng-click="resetResult()" >
+אפס תוצאה
+</button>
+</li>
+
+<li >
+<div ng-repeat="t in myTeams| filter: { name: 'הפועל חיפה' }" class="table">
+<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+<p>
+{{t.name}}
+</p> </a>
+<form>
+<input type="number" ng-model="scoreTeam2" min="0" max="20">
+</form>
+<h1>{{scoreTeam2}}</h1>
+</li>
+
+</ol>
+</article>
+</li>
+
+<hr>
+
+<li class="fc">
+<article>
+
+<ol class="fc">
+
+<li >
+<div ng-repeat="t in myTeams| filter: { name: 'עירוני קרית שמונה' }" class="table">
+<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+<p>
+{{t.name}}
+</p> </a>
+</li>
+
+<li >
+<time datetime="2016-08-20 19:00">
+20/08/16
+</time>
+<p class="time">
+19:00
+</p>
+<div ng-repeat="t in myTeams| filter: { name: 'עירוני קרית שמונה' }">
+<p>
+<a href="{{t.tickets}}" target="_blank">רכישת כרטיסים</a>
+</p>
+<p>
+<a href="{{t.waze}}" target="_blank"><img src="images/waze.png"></a>
+</p>
+</div>
+</li>
+
+<li>
+<div ng-repeat="t in myTeams| filter: { name: 'מ.ס אשדוד' }" class="table">
+<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+<p>
+{{t.name}}
+</p> </a>
+</li>
+
+</ol>
+</article>
+</li>
+
+<hr>
+
+<li class="fc">
+<article>
+
+<ol class="fc">
+
+<li>
+<div ng-repeat="t in myTeams| filter: { name: 'מכבי פתח תקוה' }" class="table">
+<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+<p>
+{{t.name}}
+</p> </a>
+</li>
+
+<li >
+<time datetime="2016-08-20 19:00">
+20/08/16
+</time>
+<p class="time">
+19:00
+</p>
+<div ng-repeat="t in myTeams| filter: { name: 'מכבי פתח תקוה' }">
+<p>
+<a href="{{t.tickets}}" target="_blank">רכישת כרטיסים</a>
+</p>
+<p>
+<a href="{{t.waze}}" target="_blank"><img src="images/waze.png"></a>
+</p>
+</div>
+</li>
+
+<li >
+<div ng-repeat="t in myTeams| filter: { name: 'ביתר ירושלים' }" class="table">
+<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+<p>
+{{t.name}}
+</p> </a>
+</li>
+
+</ol>
+</article>
+</li>
+
+<hr>
+
+<li class="fc">
+<article>
+
+<ol class="fc">
+
+<li >
+<div ng-repeat="t in myTeams| filter: { name: 'מכבי חיפה' }" class="table">
+<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+<p>
+{{t.name}}
+</p> </a>
+</li>
+
+<li >
+<time datetime="2016-08-20 19:00">
+20/08/16
+</time>
+<p class="time">
+19:00
+</p>
+<div ng-repeat="t in myTeams| filter: { name: 'מכבי חיפה' }">
+<p>
+<a href="{{t.tickets}}" target="_blank">רכישת כרטיסים</a>
+</p>
+<p>
+<a href="{{t.waze}}" target="_blank"><img src="images/waze.png"></a>
+</p>
+</div>
+</li>
+
+<li >
+<div ng-repeat="t in myTeams| filter: { name: 'הפועל תל אביב' }" class="table">
+<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+<p>
+{{t.name}}
+</p> </a>
+</li>
+
+</ol>
+</article>
+</li>
+
+<hr>
+
+<li class="fc">
+<article>
+
+<ol class="fc">
+
+<li >
+<div ng-repeat="t in myTeams| filter: { name: 'הפועל באר שבע' }" class="table">
+<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+<p>
+{{t.name}}
+</p> </a>
+</li>
+
+<li >
+<time datetime="2016-08-20 19:00">
+20/08/16
+</time>
+<p class="time">
+19:00
+</p>
+<div ng-repeat="t in myTeams| filter: { name: 'הפועל באר שבע' }">
+<p>
+<a href="{{t.tickets}}" target="_blank">רכישת כרטיסים</a>
+</p>
+<p>
+<a href="{{t.waze}}" target="_blank"><img src="images/waze.png"></a>
+</p>
+</div>
+</li>
+
+<li >
+<div ng-repeat="t in myTeams| filter: { name: 'הפועל רעננה' }" class="table">
+<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+<p>
+{{t.name}}
+</p> </a>
+</li>
+
+</ol>
+</article>
+</li>
+
+<hr>
+
+<li class="fc">
+<article>
+
+<ol class="fc">
+
+<li >
+<div ng-repeat="t in myTeams| filter: { name: 'בני יהודה' }" class="table">
+<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+<p>
+{{t.name}}
+</p> </a>
+</li>
+
+<li >
+<time datetime="2016-08-20 19:00">
+20/08/16
+</time>
+<p class="time">
+19:00
+</p>
+<div ng-repeat="t in myTeams| filter: { name: 'בני יהודה' }">
+<p>
+<a href="{{t.tickets}}" target="_blank">רכישת כרטיסים</a>
+</p>
+<p>
+<a href="{{t.waze}}" target="_blank"><img src="images/waze.png"></a>
+</p>
+</div>
+</li>
+
+<li >
+<div ng-repeat="t in myTeams| filter: { name: 'בני סכנין' }" class="table">
+<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}">
+<p>
+{{t.name}}
+</p> </a>
+</li>
+
+</ol>
+</article>
+</li>
+-->
+
+<!--
+<form class="section-title">
+<h2>בחר מחזור</h2>
+<select ng-model="round">
+<option value="">בחר מחזור <optgroup label="ליגת העל 2016/17"></optgroup><option value="round1">מחזור 1 <option value="round2">מחזור 2 <option value="round3">מחזור 3 <option value="round4">מחזור 4 <option value="round5">מחזור 5 <option value="round6">מחזור 6 <option value="round7">מחזור 7 <option value="round8">מחזור 8 <option value="round9">מחזור 9 <option value="round10">מחזור 10 <option value="round11">מחזור 11 <option value="round12">12 מחזור <option value="round13">מחזור 13 <option value="round14">מחזור 14 <option value="round15">מחזור 15 <option value="round16">מחזור 16 <option value="round17">מחזור 17 <option value="round18">מחזור 18 <option value="round19">מחזור 19 <option value="round20">מחזור 20 <option value="round21">מחזור 21 <option value="round22">מחזור 22 <option value="round23">מחזור 23 <option value="round24">מחזור 24 <option value="round25">מחזור 25 <option value="round26">מחזור 26
+</select>
+<span>או</span>
+<select>
+<option value="">בחר קבוצה</option><option value="beitarYerushalaim">ביתר ירושלים</option><option value="bneiYehuda">בני יהודה</option><option value="bneiSachnin">בני סכנין</option><option value="hapoelAshkelon">הפועל אשקלון</option><option value="hapoelBeerSheva">הפועל באר שבע</option><option value="hapoelHaifa">הפועל חיפה</option><option value="hapoelKfarSaba">הפועל כפ"ס</option><option value="hapoelRaanana">הפועל רעננה</option><option value="hapoelTelAviv">הפועל תל אביב</option><option value="msAshdod">מ.ס. אשדוד</option><option value="maccabiHaifa">מכבי חיפה</option><option value="maccabiPetachTikva">מכבי פתח תקוה</option><option value="maccabiTelAviv">מכבי תל אביב</option><option value="eironiKiriatShmona">עירוני קרית שמונה</option>
+</select>
+</form>
+
+<div ng-switch="round">
+<div ng-switch-when="round1">
+111
+</div>
+<div ng-switch-when="round2">
+222
+</div>
+<div ng-switch-when="round3">
+
+333
+</div>
+<div ng-switch-when="round4">
+
+</div>
+<div ng-switch-when="round5">
+
+</div>
+<div ng-switch-when="round6">
+
+</div>
+<div ng-switch-when="round7">
+
+</div>
+<div ng-switch-when="round8">
+
+</div>
+<div ng-switch-when="round9">
+
+</div>
+<div ng-switch-when="round10">
+
+</div>
+<div ng-switch-when="round11">
+
+</div>
+<div ng-switch-when="round12">
+
+</div>
+<div ng-switch-when="round13">
+
+</div>
+<div ng-switch-when="round14">
+
+</div>
+<div ng-switch-when="round15">
+
+</div>
+<div ng-switch-when="round16">
+
+</div>
+<div ng-switch-when="round17">
+
+</div>
+<div ng-switch-when="round18">
+
+</div>
+<div ng-switch-when="round19">
+
+</div>
+<div ng-switch-when="round20">
+
+</div>
+<div ng-switch-when="round21">
+
+</div>
+<div ng-switch-when="round22">
+
+</div>
+<div ng-switch-when="round23">
+
+</div>
+<div ng-switch-when="round24">
+
+</div>
+<div ng-switch-when="round25">
+
+</div>
+<div ng-switch-when="round26">
+
+</div>
+</div>
+
+<!--
+<b>/</b>
+<select name="rounds" ng-model="currentRound" class="btn-primary">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5"></option>
+<option value="6"></option>
+<option value="7"></option>
+<option value="8"></option>
+<option value="9"></option>
+<option value="10"></option>
+<option value="11"></option>
+<option value="12"></option>
+<option value="13"></option>
+<option value="14"></option>
+<option value="15"></option>
+<option value="16"></option>
+<option value="17"></option>
+<option value="18"></option>
+<option value="19"></option>
+<option value="20"></option>
+<option value="21"></option>
+<option value="22"></option>
+<option value="23"></option>
+<option value="24"></option>
+<option value="25"></option>
+<option value="26"></option>
+</select>
+-->
+

@@ -9,6 +9,7 @@
 		<script src="node_modules/jquery/dist/jquery.min.js"></script>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
 	</head>
 	<body>
 		<div class="wrap">
@@ -67,9 +68,13 @@
 											<h4>{{match.teamBScore}}</h4>
 										</li>
 										<hr />
-									
+
 									</div>
-	<div><button ng-click="resetAllResult()">אפס תוצאות כל המשחקים</button></div>
+									<div>
+										<button ng-click="resetAllResult()">
+											אפס תוצאות כל המשחקים
+										</button>
+									</div>
 								</ol>
 							</article>
 						</li>
@@ -77,7 +82,7 @@
 					</ul>
 				</section>
 			</div>
-			
+
 			<footer>
 				<p class="copyrighting">
 					&copy; Copyright  by yaron
@@ -89,6 +94,13 @@
 		<script src="node_modules/angular-route/angular-route.js"></script>
 		<script src="js/config.js"></script>
 		<script src="App/Controllers/teams.js"></script>
+		<script>
+			document.getElementById('myInput').onkeypress = function(e) {
+				if (e.keyCode == 13) {
+					document.getElementById('addByEnter').click();
+				}
+			}
+		</script>
 	</body>
 </html>
 <!--

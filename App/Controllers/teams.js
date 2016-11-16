@@ -67,8 +67,8 @@
 					myTablePoints[$scope.matches[index].teamB.name].gamesPlayed++;
 					myTablePoints[$scope.matches[index].teamA.name].goals = myTablePoints[$scope.matches[index].teamA.name].goals + $scope.matches[index].teamAScore;
 					myTablePoints[$scope.matches[index].teamB.name].goals = myTablePoints[$scope.matches[index].teamB.name].goals + $scope.matches[index].teamBScore;
-					myTablePoints[$scope.matches[index].teamA.name].goalsMinus = myTablePoints[$scope.matches[index].teamA.name].goalsMinus - [$scope.matches[index].teamBScore];
-					myTablePoints[$scope.matches[index].teamB.name].goalsMinus = myTablePoints[$scope.matches[index].teamB.name].goalsMinus - [$scope.matches[index].teamAScore];
+					myTablePoints[$scope.matches[index].teamA.name].goalsMinus = myTablePoints[$scope.matches[index].teamA.name].goalsMinus + $scope.matches[index].teamBScore;
+					myTablePoints[$scope.matches[index].teamB.name].goalsMinus = myTablePoints[$scope.matches[index].teamB.name].goalsMinus + $scope.matches[index].teamAScore;
 					}
 		//////
 		localStorage.setItem("myTablePoints", JSON.stringify(myTablePoints));
@@ -674,7 +674,7 @@ rounds.push(round26);
  //press enter instead of click the button
  document.getElementById('myInput').onkeypress = function(e) {
  if (e.keyCode == 13) {
- document.getElementById('addByEnter').click();
+ document.getElementById('addByEnter').click(); 
  }
  }
  */

@@ -6,12 +6,15 @@
 			<h5>img:</h5><img ng-src="img/{{d.Image}}" width="60" height="60" title="{{d.name}}">
 			<h5>url</h5>{{d.url}}
 			<h5>alt</h5>{{d.alt}}
+					<h5>IMAGE</h5>{{d.data["0"].group["0"].Image["0"].src}}
 			<h5>resourceId</h5>{{d.resourceId}}
-			<a href="{{d.href}}" target="_blank">F14b 11</a>
+			
 			<h5>text</h5>{{d.text}}
-			<h3></h3>{{d.Gray}}
+			
 			<li ng-repeat="e in d.group">
 							<h5>text22</h5>{{e.text}}
+							<h3>Gray link{{e.Gray link}}</h3>
+							<h3>gray</h3>{{d.Gray}}
 						</li>
 <ul>
 		</li>
@@ -33,3 +36,4 @@
 
  <!--
  	<p>Gray link:</p>{{Gray link}}
+ 	<a href="{{d.href}}" target="_blank">F14b 11</a>

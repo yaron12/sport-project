@@ -1,3 +1,5 @@
+<!DOCTYPE HTML>
+<title>משחקים</title>
 <div class="wrap">
 	<section class="rounds-section" >
 		<ul class="round-games" ng-controller="israeliLeage">
@@ -22,7 +24,7 @@
 									{{match.teamA.name}}
 								</p> </a>
 																	
-										<h3>{{match.teamAScore}}</h3>
+										<h3 class="showScore">{{match.teamAScore}}</h3>
 
 							</li>
 
@@ -50,7 +52,7 @@
 									{{match.teamB.name}}
 								</p> </a>
 
-								<h3>{{match.teamBScore}}</h3>
+								<h3 class="showScore">{{match.teamBScore}}</h3>
 							</li>
 							<hr />
 						</div>

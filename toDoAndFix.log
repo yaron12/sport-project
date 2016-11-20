@@ -1,7 +1,20 @@
 
  connection all the controllers
- route with animations
- goals minus calc
+
  sort leagestatus acording points
  order by points
  localstorage work until F5
+ loop leage table
+change in bootstrap to     margin-top: 15px; margin-bottom: 0;
+
+
+
+
+
+presentation:
+
+routing
+one page
+management interface enter key
+local storage
+animations

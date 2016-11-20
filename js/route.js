@@ -1,12 +1,12 @@
 (function() {
 	angular.module("app").config(route);
-
 	function route($routeProvider) {
-		$routeProvider.when('/leageStatus', {
+		$routeProvider
+		.when('/leageStatus', {
 			templateUrl : 'App/view/leageStatus.html'
 
 		}).when('/teams', {
-			templateUrl : 'App/view/teams.html',
+			templateUrl : 'App/view/teams.html'
 			//controller : "contactUs"
 			//template:"<h1>this is about page</h1>"
 
@@ -14,20 +14,14 @@
 			templateUrl : 'App/view/statistics.html'
 
 		}).when('/games', {
-			templateUrl : 'App/view/games.html',
-
-			/*
-
-			 }).when('/home', {
-			 templateUrl : 'app/views/home.html',
-			 controller : "home"
-			 //template:"<h1>this is about page</h1>"
-			 */
+			templateUrl : 'App/view/games.html'
+			
 		}).otherwise({
 			redirectTo : '/'
 		});
-
-	}
+}
+	
+	
 
 })();
 

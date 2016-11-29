@@ -1,6 +1,6 @@
 (function() {
 	var app = angular.module("app");
-	app.controller("news", news)
+	app.controller("news", news);
 
 	function news($scope, $http) {
 
@@ -10,8 +10,9 @@
 			promise.then(success, error);
 
 			function success(response) {
-				$scope.data = response.data;
-				console.log(response.data);
+				//$scope.data = response.data;
+				//console.log(response.data.extractorData.data["0"].group);
+				$scope.data1 = response.data.extractorData.data["0"].group;
 			};
 
 			function error(response) {

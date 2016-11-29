@@ -3,21 +3,21 @@
 <div ng-controller="news" data-ng-init="getData()">
 
 	<ul style="direction: rtl;width: 75%;margin: 0 auto">
-		<li ng-repeat="d in data track by $index" style="color: white">
+		<li ng-repeat="d in data1 | limitTo:1" style="color: white">
 			<div class="articleNews" style="direction: rtl;display:inline-block">
 				<aside  style="float:right">
 					<a href="{{d.data["0"].group["0"]["Image"]["0"].href}}" target="_blank">
-						 <img style="margin: 10px;" ng-src={{d.data["0"].group[0].Image["0"].src}} width="280" height="150" alt="{{d.data["0"].group["0"].Image["0"].alt}}"> </a>
+						 <img style="margin: 10px;" ng-src={{d.Image["0"].src}} width="280" height="150" alt="{{d.data["0"].group["0"].Image["0"].alt}}"> </a>
 				</aside>
-				<b><a href="{{d.data["0"].group["0"]["F14b link"]["0"].href}}" target="_blank">
-					 <h2 style="width: 85%;text-align: center;color: #fcf8e3">{{d.data["0"].group["0"]["F14b link"]["0"].text}}</h2> </a></b>
+				<b><a href="{{d["F14b link"]["0"].href}}" target="_blank">
+					 <h2 style="width: 85%;text-align: center;color: #fcf8e3">{{d["F14b link"]["0"].text}}</h2> </a></b>
 				<a href="{{d.data["0"].group["0"]["Gray link"]["0"].href}}" target="_blank"> 
-					<h4 style="width: 75%;color: #fcf8e3">{{d.data["0"].group["0"]["Gray link"]["0"].text}}</h4> </a>
+					<h4 style="width: 75%;color: #fcf8e3">{{d["Gray link"]["0"].text}}</h4> </a>
 			</div>
 			<hr>
 
 
-
+<!--
 			<div class="articleNews" style="direction: rtl;display:inline-block">
 				<aside  style="float:right">
 					<a href="{{d.data["0"].group["1"]["Image"]["0"].href}}" target="_blank"> <img ng-src={{d.data["0"].group[1].Image["0"].src}} width="280" height="150" alt="{{d.data["0"].group["1"].Image["0"].alt}}"> </a>
@@ -26,18 +26,8 @@
 				<a href="{{d.data["0"].group["1"]["Gray link"]["0"].href}}" target="_blank"> <h4>{{d.data["0"].group["1"]["Gray link"]["0"].text}}</h4> </a>
 			</div>
 			<hr>
-
-
-
-			<div class="articleNews" style="direction: rtl;display:inline-block">
-				<aside  style="float:right">
-					<a href="{{d.data["0"].group["2"]["Image"]["0"].href}}" target="_blank"> <img ng-src={{d.data["0"].group[2].Image["0"].src}} width="280" height="150" alt="{{d.data["0"].group["2"].Image["0"].alt}}"> </a>
-				</aside>
-				<b><a href="{{d.data["0"].group["2"]["F14b link"]["0"].href}}" target="_blank"> <h2>{{d.data["0"].group["2"]["F14b link"]["0"].text}}</h2> </a></b>
-				<a href="{{d.data["0"].group["2"]["Gray link"]["0"].href}}" target="_blank"> <h4>{{d.data["0"].group["2"]["Gray link"]["0"].text}}</h4> </a>
-			</div>
-			<hr>
-
+			-->
+			
 		</li>
 
 	</ul>

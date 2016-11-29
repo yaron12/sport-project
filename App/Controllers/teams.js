@@ -4,6 +4,8 @@
 
 	function israeliLeage($scope) {
 		$scope.myTeams = teams;
+		$scope.myTablePoints1 = JSON.parse(localStorage.getItem("myTablePoints"));
+		console.log("zzzzzzz",$scope.myTablePoints1);
 		// $scope.teamAScore = [];
 		// $scope.teamBScore = [];
 		$scope.saveMachResult = function(index) {
@@ -17,98 +19,99 @@
 			if (myData) {
 				myData[$scope.currentRound - 1] = $scope.matches;
 				if (localStorage.getItem("myTablePoints")) {
-					var myTablePoints = JSON.parse(localStorage.getItem("myTablePoints"));
+					 $scope.myTablePoints = JSON.parse(localStorage.getItem("myTablePoints"));
 
 					console.log($scope.matches[index].teamA.name);
 					console.log($scope.matches[index].teamB.name);
 
-					if (!myTablePoints[$scope.matches[index].teamA.name]) {
+					if (!$scope.myTablePoints[$scope.matches[index].teamA.name]) {
 
-						myTablePoints[$scope.matches[index].teamA.name] = {};
-						myTablePoints[$scope.matches[index].teamA.name].gamesPlayed = 0;
-						myTablePoints[$scope.matches[index].teamA.name].wins = 0;
-						myTablePoints[$scope.matches[index].teamA.name].draws = 0;
-						myTablePoints[$scope.matches[index].teamA.name].losses = 0;
-						myTablePoints[$scope.matches[index].teamA.name].goals = 0;
-						myTablePoints[$scope.matches[index].teamA.name].goalsMinus = 0;
-						myTablePoints[$scope.matches[index].teamA.name].points = 0;
-
-					}
-					if (!myTablePoints[$scope.matches[index].teamB.name]) {
-
-						myTablePoints[$scope.matches[index].teamB.name] = {};
-						myTablePoints[$scope.matches[index].teamB.name].gamesPlayed = 0;
-						myTablePoints[$scope.matches[index].teamB.name].wins = 0;
-						myTablePoints[$scope.matches[index].teamB.name].draws = 0;
-						myTablePoints[$scope.matches[index].teamB.name].losses = 0;
-						myTablePoints[$scope.matches[index].teamB.name].goals = 0;
-						myTablePoints[$scope.matches[index].teamB.name].goalsMinus = 0;
-						myTablePoints[$scope.matches[index].teamB.name].points = 0;
+						$scope.myTablePoints[$scope.matches[index].teamA.name] = {};
+						$scope.myTablePoints[$scope.matches[index].teamA.name].gamesPlayed = 0;
+						$scope.myTablePoints[$scope.matches[index].teamA.name].wins = 0;
+						$scope.myTablePoints[$scope.matches[index].teamA.name].draws = 0;
+						$scope.myTablePoints[$scope.matches[index].teamA.name].losses = 0;
+						$scope.myTablePoints[$scope.matches[index].teamA.name].goals = 0;
+						$scope.myTablePoints[$scope.matches[index].teamA.name].goalsMinus = 0;
+						$scope.myTablePoints[$scope.matches[index].teamA.name].points = 0;
 
 					}
-					console.log("get in to LS", myTablePoints);
+					if (!$scope.myTablePoints[$scope.matches[index].teamB.name]) {
+
+						$scope.myTablePoints[$scope.matches[index].teamB.name] = {};
+						$scope.myTablePoints[$scope.matches[index].teamB.name].gamesPlayed = 0;
+						$scope.myTablePoints[$scope.matches[index].teamB.name].wins = 0;
+						$scope.myTablePoints[$scope.matches[index].teamB.name].draws = 0;
+						$scope.myTablePoints[$scope.matches[index].teamB.name].losses = 0;
+						$scope.myTablePoints[$scope.matches[index].teamB.name].goals = 0;
+						$scope.myTablePoints[$scope.matches[index].teamB.name].goalsMinus = 0;
+						$scope.myTablePoints[$scope.matches[index].teamB.name].points = 0;
+
+					}
+					console.log("get in to LS", $scope.myTablePoints);
 
 					///// calc
 					if ([$scope.matches[index].teamAScore] > [$scope.matches[index].teamBScore]) {
-						myTablePoints[$scope.matches[index].teamA.name].wins++;
-						myTablePoints[$scope.matches[index].teamB.name].losses++;
-						myTablePoints[$scope.matches[index].teamA.name].points = myTablePoints[$scope.matches[index].teamB.name].points + 3;
+						$scope.myTablePoints[$scope.matches[index].teamA.name].wins++;
+						$scope.myTablePoints[$scope.matches[index].teamB.name].losses++;
+						$scope.myTablePoints[$scope.matches[index].teamA.name].points = $scope.myTablePoints[$scope.matches[index].teamB.name].points + 3;
 					} else if ([$scope.matches[index].teamAScore] = [$scope.matches[index].teamBScore]) {
-						myTablePoints[$scope.matches[index].teamA.name].draws++;
-						myTablePoints[$scope.matches[index].teamB.name].draws++;
-						myTablePoints[$scope.matches[index].teamA.name].points++;
-						myTablePoints[$scope.matches[index].teamB.name].points++;
+						$scope.myTablePoints[$scope.matches[index].teamA.name].draws++;
+						$scope.myTablePoints[$scope.matches[index].teamB.name].draws++;
+						$scope.myTablePoints[$scope.matches[index].teamA.name].points++;
+						$scope.myTablePoints[$scope.matches[index].teamB.name].points++;
 					} else {
-						myTablePoints[$scope.matches[index].teamB.name].wins++;
-						myTablePoints[$scope.matches[index].teamA.name].losses++;
-						myTablePoints[$scope.matches[index].teamB.name].points = myTablePoints[$scope.matches[index].teamB.name].points + 3;
+						$scope.myTablePoints[$scope.matches[index].teamB.name].wins++;
+						$scope.myTablePoints[$scope.matches[index].teamA.name].losses++;
+						$scope.myTablePoints[$scope.matches[index].teamB.name].points = $scope.myTablePoints[$scope.matches[index].teamB.name].points + 3;
 					}
 
 					if ([$scope.matches[index].teamAScore] != "" && [$scope.matches[index].teamBScore] != "") {
-						myTablePoints[$scope.matches[index].teamA.name].gamesPlayed++;
-						myTablePoints[$scope.matches[index].teamB.name].gamesPlayed++;
-						myTablePoints[$scope.matches[index].teamA.name].goals = myTablePoints[$scope.matches[index].teamA.name].goals + $scope.matches[index].teamAScore;
-						myTablePoints[$scope.matches[index].teamB.name].goals = myTablePoints[$scope.matches[index].teamB.name].goals + $scope.matches[index].teamBScore;
-						myTablePoints[$scope.matches[index].teamA.name].goalsMinus = myTablePoints[$scope.matches[index].teamA.name].goalsMinus + $scope.matches[index].teamBScore;
-						myTablePoints[$scope.matches[index].teamB.name].goalsMinus = myTablePoints[$scope.matches[index].teamB.name].goalsMinus + $scope.matches[index].teamAScore;
+						$scope.myTablePoints[$scope.matches[index].teamA.name].gamesPlayed++;
+						$scope.myTablePoints[$scope.matches[index].teamB.name].gamesPlayed++;
+						$scope.myTablePoints[$scope.matches[index].teamA.name].goals = $scope.myTablePoints[$scope.matches[index].teamA.name].goals + $scope.matches[index].teamAScore;
+						$scope.myTablePoints[$scope.matches[index].teamB.name].goals = $scope.myTablePoints[$scope.matches[index].teamB.name].goals + $scope.matches[index].teamBScore;
+						$scope.myTablePoints[$scope.matches[index].teamA.name].goalsMinus = $scope.myTablePoints[$scope.matches[index].teamA.name].goalsMinus + $scope.matches[index].teamBScore;
+						$scope.myTablePoints[$scope.matches[index].teamB.name].goalsMinus = $scope.myTablePoints[$scope.matches[index].teamB.name].goalsMinus + $scope.matches[index].teamAScore;
 					}
 				}
-				console.log("gamesPlayed", myTablePoints[$scope.matches[index].teamB.name].gamesPlayed);
+				console.log("gamesPlayed", $scope.myTablePoints[$scope.matches[index].teamA.name].gamesPlayed);
+				console.log("myTablePoints",$scope.myTablePoints);
 				//////
-				localStorage.setItem("myTablePoints", JSON.stringify(myTablePoints));
+				localStorage.setItem("myTablePoints", JSON.stringify($scope.myTablePoints));
 
 			} else {
 				localStorage.setItem("myData", JSON.stringify(rounds));
 
 			}
 
-		}
+		};
 
 		$scope.resetResult = function() {
 			this.teamAScore = "";
 			this.teamBScore = "";
 			//localStorage.removeItem(teamAScore);
-		}
+		};
 
 		$scope.resetAllResult = function() {
 			window.localStorage.clear();
-		}
+		};
 
 		$scope.getRound = function() {
 
 			if (!localStorage.getItem("myTablePoints")) {
-				localStorage.setItem("myTablePoints", "{}")
+				localStorage.setItem("myTablePoints", "{}");
 			}
 
 			var myData = JSON.parse(localStorage.getItem("myData"));
-			console.log(myData)
+			console.log(myData);
 			if (myData)
 				$scope.matches = myData[$scope.currentRound - 1];
 			else
 				$scope.matches = rounds[$scope.currentRound - 1];
 			console.log("$scope.matches", $scope.matches);
 
-		}
+		};
 	}
 
 	function Match(teamB, teamA) {
@@ -355,7 +358,7 @@
 	var match131 = new Match(teams[13], teams[1]);
 	var match132 = new Match(teams[8], teams[5]);
 	var match133 = new Match(teams[10], teams[7]);
-	20
+	
 	var match134 = new Match(teams[12], teams[7]);
 	var match135 = new Match(teams[5], teams[10]);
 	var match136 = new Match(teams[1], teams[8]);

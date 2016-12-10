@@ -1,5 +1,28 @@
 <!DOCTYPE HTML>
 <title>טבלת הליגה</title>
+<style>
+	li {
+		display: flex;
+	}
+	
+.iconTeamCircle:hover {
+ transform: rotate(360deg);
+
+ border-radius: 50%;
+ }
+ .rotate {
+ transition: all 0.5s ease-in-out;
+ }
+ .rotate:hover {
+ transition: all 1s ease-in-out;
+ }
+ 
+	@media screen and (max-width: 900px) {
+		li {
+			display: none;
+		}
+	}
+</style>
 <section class="box rotate">
 	<section>
 		<h1 class="fc main-title "><span class="all-text"><span class="text">ליגת העל 2016/17</span></span></h1>
@@ -12,13 +35,13 @@
 					</tr>
 				</thead>
 
-				<tbody ng-repeat="t in myTeams | orderBy : points">
+				<tbody ng-repeat="t in myTeams | orderBy : myTablePoints1[t.name].points">
+
 					<tr class="teams-up">
 
 						<td class="iposition">{{$index + 1}}</td>
-						<td class="name">
-							<a href="{{t.link}}" target="_blank">{{t.name}}</a>
-							</td>
+						<td class="name"><a href="{{t.link}}" target="_blank"><img ng-src="img/{{t.img}}" width="25" height="25" title="{{t.name}}" class="iconTeamCircle rotate">&nbsp{{t.name}}</a></td>
+
 						<td>{{myTablePoints1[t.name].gamesPlayed}}</td>
 						<td>{{myTablePoints1[t.name].wins}}</td>
 						<td>{{myTablePoints1[t.name].draws}}</td>
@@ -26,6 +49,7 @@
 						<td>{{myTablePoints1[t.name].goals}}</td>
 						<td>{{myTablePoints1[t.name].goalsMinus}}</td>
 						<td>{{myTablePoints1[t.name].points}}</td>
+						<!--		<td ng-repeat="x in myTablePoints1 desc">{{myTablePoints1[t.name].points}}</td> -->
 					</tr>
 				</tbody>
 			</table>
@@ -33,6 +57,17 @@
 		</article>
 	</section>
 </section>
+
+<div>
+<li ng-controller="israeliLeage">
+	<div ng-repeat="t in myTeams" class="table" >
+		<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}" class="iconTeamCircle rotate">
+		<p>
+			{{t.name}}
+		</p> </a>
+	</div>
+</li>
+</div>
 
 <!--
 <tr class="teams-up">

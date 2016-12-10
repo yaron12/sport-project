@@ -5,7 +5,14 @@
 	function israeliLeage($scope) {
 		$scope.myTeams = teams;
 		$scope.myTablePoints1 = JSON.parse(localStorage.getItem("myTablePoints"));
-		console.log("zzzzzzz",$scope.myTablePoints1);
+		console.log("zzzzzzz", $scope.myTablePoints1);
+	/*	$scope.newArray = [];
+		Object.keys($scope.myTablePoints1).map(function(key, index) {
+			console.log(key)
+			$scope.newArray.push(key)
+			console.log($scope.newArray)
+		});
+*/
 		// $scope.teamAScore = [];
 		// $scope.teamBScore = [];
 		$scope.saveMachResult = function(index) {
@@ -19,7 +26,7 @@
 			if (myData) {
 				myData[$scope.currentRound - 1] = $scope.matches;
 				if (localStorage.getItem("myTablePoints")) {
-					 $scope.myTablePoints = JSON.parse(localStorage.getItem("myTablePoints"));
+					$scope.myTablePoints = JSON.parse(localStorage.getItem("myTablePoints"));
 
 					console.log($scope.matches[index].teamA.name);
 					console.log($scope.matches[index].teamB.name);
@@ -55,6 +62,7 @@
 						$scope.myTablePoints[$scope.matches[index].teamA.name].wins++;
 						$scope.myTablePoints[$scope.matches[index].teamB.name].losses++;
 						$scope.myTablePoints[$scope.matches[index].teamA.name].points = $scope.myTablePoints[$scope.matches[index].teamB.name].points + 3;
+						
 					} else if ([$scope.matches[index].teamAScore] = [$scope.matches[index].teamBScore]) {
 						$scope.myTablePoints[$scope.matches[index].teamA.name].draws++;
 						$scope.myTablePoints[$scope.matches[index].teamB.name].draws++;
@@ -76,7 +84,7 @@
 					}
 				}
 				console.log("gamesPlayed", $scope.myTablePoints[$scope.matches[index].teamA.name].gamesPlayed);
-				console.log("myTablePoints",$scope.myTablePoints);
+				console.log("myTablePoints", $scope.myTablePoints);
 				//////
 				localStorage.setItem("myTablePoints", JSON.stringify($scope.myTablePoints));
 
@@ -86,7 +94,32 @@
 			}
 
 		};
+		
+		
+		app.filter('orderObjectBy', function(){
+ return function(input, attribute) {
+    if (!angular.isObject(input)) return input;
 
+    var array = [];
+    for(var objectKey in input) {
+        array.push(input[objectKey]);
+    }
+
+    array.sort(function(a, b){
+        a = parseInt(a[attribute]);
+        b = parseInt(b[attribute]);
+        return a - b;
+    });
+    return array;
+ }
+});
+
+/*
+		$scope.rrr = function bbb(name) {
+			console.log("ddd");
+			return Object.keys(name)[0];
+		}
+*/
 		$scope.resetResult = function() {
 			this.teamAScore = "";
 			this.teamBScore = "";
@@ -174,6 +207,7 @@
 		img : '../images/Maccabihaifa.png',
 		waze : 'https://www.waze.com/he/livemap?zoom=17&lat=32.78322&lon=34.96551',
 		tickets : 'http://stadium.mhaifafc.com/gameslist.asp'
+
 	}, {
 		name : 'הפועל תל אביב',
 		link : 'http://www.htafc.co.il/',
@@ -186,6 +220,7 @@
 		img : '../images/Hapoelbeersheva.png',
 		waze : 'https://www.waze.com/he/livemap?zoom=17&lat=31.27354&lon=34.77971',
 		tickets : 'http://www.turnerstadium.co.il/tickets'
+
 	}, {
 		name : 'הפועל רעננה',
 		link : 'http://www.hapoel-raanana.co.il/',
@@ -358,7 +393,7 @@
 	var match131 = new Match(teams[13], teams[1]);
 	var match132 = new Match(teams[8], teams[5]);
 	var match133 = new Match(teams[10], teams[7]);
-	
+
 	var match134 = new Match(teams[12], teams[7]);
 	var match135 = new Match(teams[5], teams[10]);
 	var match136 = new Match(teams[1], teams[8]);
@@ -683,6 +718,6 @@
 	 document.getElementById('addByEnter').click();
 	 }
 	 }
-	 */
+*/
 
 })();

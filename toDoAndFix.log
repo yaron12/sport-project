@@ -1,10 +1,12 @@
 
  connection all the controllers
 
- sort leagestatus acording points
+
  order by points
  localstorage work until F5
  loop leage table
+ load data windows
+ one row head table
 
 
 

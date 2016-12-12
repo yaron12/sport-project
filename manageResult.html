@@ -38,7 +38,7 @@
 									<div ng-repeat="match in matches track by $index" class="table">
 										<li>
 
-											<a href="{{match.teamA.link}}" target="_blank"> <img ng-src="img/{{match.teamA.img}}" width="60" height="60" title="{{match.teamA.name}}">
+											<a href="{{match.teamA.link}}" target="_blank"> <img ng-src="img/{{match.teamA.img}}" width="60" height="60" title="{{match.teamA.name}}" class="iconTeamCircle rotate">
 											<p>
 												{{match.teamA.name}}
 											</p> </a>
@@ -59,7 +59,7 @@
 
 										<li>
 
-											<a href="{{match.teamB.link}}" target="_blank"> <img ng-src="img/{{match.teamB.img}}" width="60" height="60" title="{{match.teamB.name}}">
+											<a href="{{match.teamB.link}}" target="_blank"> <img ng-src="img/{{match.teamB.img}}" width="60" height="60" title="{{match.teamB.name}}" class="iconTeamCircle rotate">
 											<p>
 												{{match.teamB.name}}
 											</p> </a>

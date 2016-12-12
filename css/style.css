@@ -43,7 +43,7 @@ tbody tr td:hover {
 /*---------------end header-----------------*/
 section {
 	/*direction: rtl;*/
-	width: 80%;
+	width: 90%;
 	margin: 0 auto;
 	color: #5BC0DE;
 	font-size: 1em;
@@ -78,7 +78,8 @@ table {
 	text-overflow: clip;
 }
 .common-table th, .common-table td, .common-table li {
-	padding: 9px 7px;
+	/*padding: 9px 7px;*/
+	padding: 6px 0px;
 	text-align: right;
 }
 
@@ -188,8 +189,31 @@ nav ul li a:hover {
 
 .box {
 	margin: 50px auto;
+	background: rgba(0, 0, 0, 0.4);
 }
 
+/*--------------iconTeamCircle------------*/
+.iconTeamCircle:hover {
+ transform: rotate(360deg);
+
+ border-radius: 50%;
+ }
+ .rotate {
+ transition: all 0.5s ease-in-out;
+ }
+ .rotate:hover {
+ transition: all 1s ease-in-out;
+ }
+ 
+	@media screen and (max-width: 900px) {
+		li {
+			display: none;
+		}
+	}
+	
+.iconTeamCircle li {
+		display: flex;
+	}	
 /*---------------end animation-----------------*/
 /*--------------footer------------*/
 footer .copyrighting {

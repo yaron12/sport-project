@@ -1,9 +1,13 @@
 <!DOCTYPE HTML>
 <title>חדשות הספורט</title>
 
-<div ng-controller="news" data-ng-init="getData()">
 
-	<ul style="direction: rtl;width: 70%;margin: 0 auto">
+
+
+
+<div ng-controller="news" data-ng-init="getData()">
+<div ng-show="loading"><h1 style="color: white;text-align: center">טוען את הדף...</h1></div>
+	<ul style="direction: rtl;width: 62%;margin: 0 auto;background: rgba(0, 0, 0, 0.4);">
 		<li ng-repeat="d in data1 | limitTo:17" style="color: white">
 			<div class="articleNews">
 				<aside>
@@ -17,6 +21,7 @@
 
 
 <!--
+	<div class="loading"><h1 style="color: white;text-align: center">טוען את הדף...נא המתן</h1></div>
 			<div class="articleNews" style="direction: rtl;display:inline-block">
 				<aside  style="float:right">
 					<a href="{{d.data["0"].group["1"]["Image"]["0"].href}}" target="_blank"> <img ng-src={{d.data["0"].group[1].Image["0"].src}} width="280" height="150" alt="{{d.data["0"].group["1"].Image["0"].alt}}"> </a>

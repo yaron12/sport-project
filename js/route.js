@@ -2,7 +2,7 @@
 	angular.module("app").config(route);
 	function route($routeProvider) {
 		$routeProvider
-		.when('/leageStatus', {
+		.when('/', {
 			templateUrl : 'App/view/leageStatus.html'
 
 		}).when('/teams', {

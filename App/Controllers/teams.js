@@ -3,18 +3,12 @@
 	app.controller("israeliLeage", israeliLeage);
 
 	function israeliLeage($scope) {
+
 		$scope.myTeams = teams;
 		$scope.myTablePoints1 = JSON.parse(localStorage.getItem("myTablePoints"));
 		console.log("zzzzzzz", $scope.myTablePoints1);
-	/*	$scope.newArray = [];
-		Object.keys($scope.myTablePoints1).map(function(key, index) {
-			console.log(key)
-			$scope.newArray.push(key)
-			console.log($scope.newArray)
-		});
-*/
-		// $scope.teamAScore = [];
-		// $scope.teamBScore = [];
+
+
 		$scope.saveMachResult = function(index) {
 			console.log(rounds);
 			// rounds[$scope.currentRound - 1][index].teamAScore = $scope.teamAScore[index];
@@ -62,7 +56,7 @@
 						$scope.myTablePoints[$scope.matches[index].teamA.name].wins++;
 						$scope.myTablePoints[$scope.matches[index].teamB.name].losses++;
 						$scope.myTablePoints[$scope.matches[index].teamA.name].points = $scope.myTablePoints[$scope.matches[index].teamB.name].points + 3;
-						
+
 					} else if ([$scope.matches[index].teamAScore] = [$scope.matches[index].teamBScore]) {
 						$scope.myTablePoints[$scope.matches[index].teamA.name].draws++;
 						$scope.myTablePoints[$scope.matches[index].teamB.name].draws++;
@@ -87,39 +81,68 @@
 				console.log("myTablePoints", $scope.myTablePoints);
 				//////
 				localStorage.setItem("myTablePoints", JSON.stringify($scope.myTablePoints));
-
 			} else {
 				localStorage.setItem("myData", JSON.stringify(rounds));
-
 			}
-
 		};
-		
-		
-		app.filter('orderObjectBy', function(){
- return function(input, attribute) {
-    if (!angular.isObject(input)) return input;
 
-    var array = [];
-    for(var objectKey in input) {
-        array.push(input[objectKey]);
-    }
+/////sort table by points
+		$scope.pageLoad = true;
+		$(function() {
+			$scope.pageLoad = false;
+			$scope.sortTablefunc();
+		});
+		function sortUiTable() {
+			index = 0;
+			var table = $(".league-table .teams-up");
+			var newTable = table.sort(function(el, nextEl) {
+				var prev = $(el).find(".pointsTable").html();
+				var next = $(nextEl).find(".pointsTable").html();
+				if (prev < next) {
+					return 1;
+				}
+				if (prev > next) {
+					return -1;
+				}
+				return 0;
 
-    array.sort(function(a, b){
-        a = parseInt(a[attribute]);
-        b = parseInt(b[attribute]);
-        return a - b;
-    });
-    return array;
- }
-});
+			});
+			
+			$(newTable[0]).find(".iposition").html(0);
+			$(newTable[1]).find(".iposition").html(1);
+			$(newTable[2]).find(".iposition").html(2);
+			$(newTable[3]).find(".iposition").html(3);
+			$(newTable[4]).find(".iposition").html(4);
+			$(newTable[5]).find(".iposition").html(5);
+			$(newTable[6]).find(".iposition").html(6);
+			$(newTable[7]).find(".iposition").html(7);
+			$(newTable[8]).find(".iposition").html(8);
+			$(newTable[9]).find(".iposition").html(9);
+			$(newTable[10]).find(".iposition").html(10);
+			$(newTable[11]).find(".iposition").html(11);
+			$(newTable[12]).find(".iposition").html(12);
+			$(newTable[13]).find(".iposition").html(13);
+			$(newTable[14]).find(".iposition").html(14);
 
-/*
-		$scope.rrr = function bbb(name) {
-			console.log("ddd");
-			return Object.keys(name)[0];
+			$(".league-table").html(newTable);
+			return newTable;
 		}
-*/
+
+
+		$scope.sortTablefunc = function() {
+			var trs = sortUiTable();
+		};
+			
+
+		function sortTeable() {
+			console.log("myTablePoints", $scope.myTablePoints1);
+			console.log("teams", teams);
+
+		}
+
+		sortTeable();
+/////end sort table by points			
+
 		$scope.resetResult = function() {
 			this.teamAScore = "";
 			this.teamBScore = "";
@@ -718,6 +741,6 @@
 	 document.getElementById('addByEnter').click();
 	 }
 	 }
-*/
+	 */
 
 })();

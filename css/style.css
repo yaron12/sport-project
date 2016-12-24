@@ -1,4 +1,4 @@
-body, .wrap, .up, .middle, .down, header, span, article, ol, footer, h1, width, div, nav, ul, li, h1, h2, h3, h4, h5, h6, hr, a, p {
+body, .wrap, .up, .middle, .down, header, span, article, ol, footer, h1, width, div, nav, ul, li, h1, h2, h3, h4, h5, h6, hr, a, p,th{
 	margin: 0;
 	padding: 0;
 }
@@ -42,8 +42,7 @@ tbody tr td:hover {
 }
 /*---------------end header-----------------*/
 section {
-	/*direction: rtl;*/
-	width: 90%;
+	width: 70%;
 	margin: 0 auto;
 	color: #5BC0DE;
 	font-size: 1em;
@@ -89,6 +88,9 @@ table {
 .main-title {
 	margin: 2%;
 	text-align: center;
+}
+thead tr th{
+	text-align: right;
 }
 
 /*---------------end table-----------------*/

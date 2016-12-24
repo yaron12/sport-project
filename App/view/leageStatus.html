@@ -4,8 +4,6 @@
 	li {
 		display: flex;
 	}
-	
-
 </style>
 <section class="box rotate">
 	<section>
@@ -13,16 +11,16 @@
 		<article class="league-table-section" ng-controller="israeliLeage">
 			<div ng-show="!pageLoad"></div>
 
-			<table class="common-table league-table" >
+			<table>
 				
-
-				<thead>
+<thead style="direction: rtl">
 					<tr>
 						<th class="iposition">מקום</th><th class="name" style="width: 17%">קבוצה</th><th class="gamesPlayed">משחקים</th><th class="wins">נצחונות</th><th class="draws">תיקו</th><th class="losses">הפסדים</th><th class="goals">ש זכות</th><th class="goalsMinus">ש חובה</th><th class="points">נקודות</th>
 					</tr>
 				</thead>
+				
 
-				<tbody>
+				<tbody class="common-table league-table">
 
 					<tr class="teams-up" ng-repeat="t in myTeams">
 

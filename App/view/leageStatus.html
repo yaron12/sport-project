@@ -11,14 +11,13 @@
 		<article class="league-table-section" ng-controller="israeliLeage">
 			<div ng-show="!pageLoad"></div>
 
-			<table>
+			<table style="width: 100%;">
 				
 <thead style="direction: rtl">
 					<tr>
 						<th class="iposition">מקום</th><th class="name" style="width: 17%">קבוצה</th><th class="gamesPlayed">משחקים</th><th class="wins">נצחונות</th><th class="draws">תיקו</th><th class="losses">הפסדים</th><th class="goals">ש זכות</th><th class="goalsMinus">ש חובה</th><th class="points">נקודות</th>
 					</tr>
-				</thead>
-				
+				</thead>		
 
 				<tbody class="common-table league-table">
 
@@ -46,7 +45,7 @@
 
 <div>
 <li ng-controller="israeliLeage">
-	<div ng-repeat="t in myTeams" class="table" >
+	<div ng-repeat="t in myTeams" class="table" style="text-align: center;">
 		<a href="{{t.link}}" target="_blank"> <img ng-src="img/{{t.img}}" width="60" height="60" title="{{t.name}}" class="iconTeamCircle rotate">
 		<p>
 			{{t.name}}
@@ -54,58 +53,3 @@
 	</div>
 </li>
 </div>
-
-<!--
-<tr class="teams-up">
-<td class="iposition">1</td><td ng-repeat="t in myTeams| filter: { name: 'ביתר ירושלים' }" class="name"><a href="{{t.link}}" target="_blank" style="color: yellow">{{t.name}}</a></td><td class="gamesPlayed" ng-model="gamesPlayed">{{gamesPlayed}}</td><td class="wins" ng-model="wins">{{wins}}</td><td class="draws" ng-model="draws">0</td><td class="losses" ng-model="losses">0</td><td class="goals" ng-model="goals">0</td><td class="goalsMinus" ng-model="goalsMinus">0</td><td class="points" ng-model="points">0</td>
-</tr>
-<tr>
-<td class="iposition">2</td><td ng-repeat="t in myTeams| filter: { name: 'בני יהודה' }" class="name"><a href="{{t.link}}" target="_blank" style="color: orange">{{t.name}}</a></td><td class="gamesPlayed" ng-model="gamesPlayed">0</td><td class="wins" ng-model="wins">0</td><td class="draws" ng-model="draws">0</td><td class="losses" ng-model="losses">0</td><td class="goals" ng-model="goals">0</td><td class="goalsMinus" ng-model="goalsMinus">0</td><td class="points" ng-model="points">0</td>
-</tr>
-<tr>
-<td class="iposition">3</td><td ng-repeat="t in myTeams| filter: { name: 'בני סכנין' }" class="name"><a href="{{t.link}}" style="color: red">{{t.name}}</a></td><td class="gamesPlayed" ng-model="gamesPlayed">0</td><td class="wins" ng-model="wins">0</td><td class="draws" ng-model="draws">0</td><td class="losses" ng-model="losses">0</td><td class="goals" ng-model="goals">0</td><td class="goalsMinus" ng-model="goalsMinus">0</td><td class="points" ng-model="points">0</td>
-</tr>
-<tr>
-<td class="iposition">4</td><td ng-repeat="t in myTeams| filter: { name: 'הפועל אשקלון' }" class="name"><a href="{{t.link}}" target="_blank" style="color: purple">{{t.name}}</a></td><td class="gamesPlayed" ng-model="gamesPlayed">{{gamesPlayed}}</td><td class="wins" ng-model="wins">{{wins}}</td><td class="draws" ng-model="draws">{{draws}}</td><td class="losses" ng-model="losses">{{losses}}</td><td class="goals" ng-model="goals">0</td><td class="goalsMinus" ng-model="goalsMinus">0</td><td class="points" ng-model="points">0</td>
-</tr>
-<tr>
-<td class="iposition">5</td><td ng-repeat="t in myTeams| filter: { name: 'הפועל באר שבע' }" class="name"><a href="{{t.link}}" target="_blank" style="color: red">{{t.name}}</a></td><td class="gamesPlayed" ng-model="gamesPlayed">0</td><td class="wins" ng-model="wins">0</td><td class="draws" ng-model="draws">0</td><td class="losses" ng-model="losses">0</td><td class="goals" ng-model="goals">0</td><td class="goalsMinus" ng-model="goalsMinus">0</td><td class="points" ng-model="points">0</td>
-</tr>
-<tr>
-<td class="iposition">6</td><td ng-repeat="t in myTeams| filter: { name: 'הפועל חיפה' }" class="name"><a href="{{t.link}}" target="_blank" style="color: red">{{t.name}}</a></td><td class="gamesPlayed" ng-model="gamesPlayed">0</td><td class="wins" ng-model="wins">0</td><td class="draws" ng-model="draws">0</td><td class="losses" ng-model="losses">0</td><td class="goals" ng-model="goals">0</td><td class="goalsMinus" ng-model="goalsMinus">0</td><td class="points" ng-model="points">4</td>
-</tr>
-<tr>
-<td class="iposition">7</td><td ng-repeat="t in myTeams| filter: { name: 'הפועל כפר-סבא' }" class="name"><a href="{{t.link}}" target="_blank" style="color: green">{{t.name}}</a></td><td class="gamesPlayed" ng-model="gamesPlayed">0</td><td class="wins" ng-model="wins">0</td><td class="draws" ng-model="draws">0</td><td class="losses" ng-model="losses">0</td><td class="goals" ng-model="goals">0</td><td class="goalsMinus" ng-model="goalsMinus">0</td><td class="points" ng-model="points">0</td>
-</tr>
-<tr>
-<td class="iposition">8</td><td ng-repeat="t in myTeams| filter: { name: 'הפועל רעננה' }" class="name"><a href="{{t.link}}" target="_blank" style="color: red">{{t.name}}</a></td><td class="gamesPlayed" ng-model="gamesPlayed">0</td><td class="wins" ng-model="wins">0</td><td class="draws" ng-model="draws">0</td><td class="losses" ng-model="losses">0</td><td class="goals" ng-model="goals">0</td><td class="goalsMinus" ng-model="goalsMinus">0</td><td class="points" ng-model="points">1</td>
-</tr>
-<tr>
-<td class="iposition">9</td><td ng-repeat="t in myTeams| filter: { name: 'הפועל תל אביב' }" class="name"><a href="{{t.link}}" target="_blank" style="color: red">{{t.name}}</a></td><td class="gamesPlayed" ng-model="gamesPlayed">0</td><td class="wins" ng-model="wins">0</td><td class="draws" ng-model="draws">0</td><td class="losses" ng-model="losses">0</td><td class="goals" ng-model="goals">0</td><td class="goalsMinus" ng-model="goalsMinus">0</td><td class="points" ng-model="points">2</td>
-</tr>
-<tr>
-<td class="iposition">10</td><td ng-repeat="t in myTeams| filter: { name: 'מ.ס אשדוד' }" class="name"><a href="{{t.link}}" target="_blank" style="color: red">{{t.name}}</a></td><td class="gamesPlayed" ng-model="gamesPlayed">0</td><td class="wins" ng-model="wins">0</td><td class="draws" ng-model="draws">0</td><td class="losses" ng-model="losses">0</td><td class="goals" ng-model="goals">0</td><td class="goalsMinus" ng-model="goalsMinus">0</td><td class="points" ng-model="points">0</td>
-</tr>
-<tr>
-<td class="iposition">11</td><td ng-repeat="t in myTeams| filter: { name: 'מכבי חיפה' }" class="name"><a href="{{t.link}}" target="_blank" style="color: green">{{t.name}}</a></td><td class="gamesPlayed" ng-model="gamesPlayed">0</td><td class="wins" ng-model="wins">0</td><td class="draws" ng-model="draws">0</td><td class="losses" ng-model="losses">0</td><td class="goals" ng-model="goals">0</td><td class="goalsMinus" ng-model="goalsMinus">0</td><td class="points" ng-model="points">0</td>
-</tr>
-<tr>
-<td class="iposition">12</td><td ng-repeat="t in myTeams| filter: { name: 'מכבי פתח תקוה' }" class="name"><a href="{{t.link}}" target="_blank" style="color: blue">{{t.name}}</a></td><td class="gamesPlayed" ng-model="gamesPlayed">0</td><td class="wins" ng-model="wins">0</td><td class="draws" ng-model="draws">0</td><td class="losses" ng-model="losses">0</td><td class="goals" ng-model="goals">0</td><td class="goalsMinus" ng-model="goalsMinus">0</td><td class="points" ng-model="points">0</td>
-</tr>
-<tr class="teams-down">
-<td class="iposition">13</td><td ng-repeat="t in myTeams| filter: { name: 'מכבי תל אביב' }" class="name"><a href="{{t.link}}" target="_blank" style="color: yellow">{{t.name}}</a></td><td class="gamesPlayed" ng-model="gamesPlayed">0</td><td class="wins" ng-model="wins">0</td><td class="draws" ng-model="draws">0</td><td class="losses" ng-model="losses">0</td><td class="goals" ng-model="goals">0</td><td class="goalsMinus" ng-model="goalsMinus">0</td><td class="points" ng-model="points">0</td>
-</tr>
-<tr>
-<td class="iposition">14</td><td ng-repeat="t in myTeams| filter: { name: 'עירוני קרית שמונה' }" class="name"><a href="{{t.link}}" target="_blank" style="color: blue">{{t.name}}</a></td><td class="gamesPlayed" ng-model="gamesPlayed">0</td><td class="wins" ng-model="wins">0</td><td class="draws" ng-model="draws">0</td><td class="losses" ng-model="losses">0</td><td class="goals" ng-model="goals">0</td><td class="goalsMinus" ng-model="goalsMinus">0</td><td class="points" ng-model="points">0</td>
-</tr>
-
-<div ng-repeat="e in myTablePoints track by $index">
-<td class="gamesPlayed" ng-model="gamesPlayed">{{e.myTablePoints[$scope.matches[index].teamA.name].gamesPlayed}}</td>
-<td class="wins" ng-model="wins">{{e.myTablePoints[$scope.matches[index].teamB.name].wins}}</td>
-<td class="draws" ng-model="draws">{{e.draws}}</td>
-<td class="losses" ng-model="losses">{{e.myTablePoints[$scope.matches[index].teamA.name].gamesPlayed+myTablePoints[$scope.matches[index].teamB.name].gamesPlayed}}</td>
-<td class="goals" ng-model="goals">{{e.gamesPlayed.gamesPlayed}}</td>
-<td class="goalsMinus" ng-model="goalsMinus">0</td>
-<td class="points" ng-model="points">0</td>
-</div>
--->

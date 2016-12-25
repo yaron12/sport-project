@@ -1,4 +1,4 @@
-body, .wrap, .up, .middle, .down, header, span, article, ol, footer, h1, width, div, nav, ul, li, h1, h2, h3, h4, h5, h6, hr, a, p,th{
+.wrap, .up, .middle, .down,body, header, span, article, ol, footer, h1, width, div, nav, ul, li, h1, h2, h3, h4, h5, h6, hr, a, p,th{
 	margin: 0;
 	padding: 0;
 }
@@ -11,10 +11,7 @@ body {
 	font-size: 100%;
 	background-color: transparent !important;
 }
-.topHeader ul {
-	direction: rtl;
-	text-align: center;
-}
+
 .topHeader li {
 	float: right;
 	list-style: none;
@@ -24,6 +21,8 @@ body {
 .topHeader ul li a {
 	text-decoration: none;
 	font-weight: bold;
+	color:#000000;
+	font-size: 1.1em;
 }
 .topHeader ul li  :hover {
 	color: #4e92a7;
@@ -42,7 +41,7 @@ tbody tr td:hover {
 }
 /*---------------end header-----------------*/
 section {
-	width: 70%;
+	width: 75%;
 	margin: 0 auto;
 	color: #5BC0DE;
 	font-size: 1em;
@@ -94,6 +93,11 @@ thead tr th{
 }
 
 /*---------------end table-----------------*/
+/*----------------News---------------*/
+.articleNews{
+	width: 100%;
+}
+/*----------------end News---------------*/
 /*---------------games-----------------*/
 
 section .round-games {
@@ -149,10 +153,6 @@ a, a:visited {
 nav ul li a:hover {
 	font-size: 20px;
 }
-
-/*.articleNews img:hover: {
- width:300px;
- height:170px;*/
 .articleNews {
 	direction: rtl;
 	display: inline-block;
@@ -207,11 +207,7 @@ nav ul li a:hover {
  transition: all 1s ease-in-out;
  }
  
-	@media screen and (max-width: 900px) {
-		li {
-			display: none;
-		}
-	}
+
 	
 .iconTeamCircle li {
 		display: flex;
@@ -228,16 +224,25 @@ footer .copyrighting {
 }
 
 /*------------------------end footer---------------------*/
-
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1000px) {
+	section {
+		width: 85%;
+		margin: 0 auto;
+	}
+}
+@media screen and (max-width: 850px) {
 	section {
 		width: 90%;
 		margin: 0 auto;
 	}
+	li img,li p{
+			display: none;
+		}
 }
-@media screen and (max-width: 600px) {
+
+@media screen and (max-width: 700px) {
 	section {
-		width: 100%;
+		width: 98%;
 		margin: 0 auto;
 	}
 	footer .copyrighting {

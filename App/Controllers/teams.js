@@ -108,21 +108,20 @@
 
 			});
 			
-			$(newTable[0]).find(".iposition").html(0);
-			$(newTable[1]).find(".iposition").html(1);
-			$(newTable[2]).find(".iposition").html(2);
-			$(newTable[3]).find(".iposition").html(3);
-			$(newTable[4]).find(".iposition").html(4);
-			$(newTable[5]).find(".iposition").html(5);
-			$(newTable[6]).find(".iposition").html(6);
-			$(newTable[7]).find(".iposition").html(7);
-			$(newTable[8]).find(".iposition").html(8);
-			$(newTable[9]).find(".iposition").html(9);
-			$(newTable[10]).find(".iposition").html(10);
-			$(newTable[11]).find(".iposition").html(11);
-			$(newTable[12]).find(".iposition").html(12);
-			$(newTable[13]).find(".iposition").html(13);
-			$(newTable[14]).find(".iposition").html(14);
+			$(newTable[0]).find(".iposition").html(1);
+			$(newTable[1]).find(".iposition").html(2);
+			$(newTable[2]).find(".iposition").html(3);
+			$(newTable[3]).find(".iposition").html(4);
+			$(newTable[4]).find(".iposition").html(5);
+			$(newTable[5]).find(".iposition").html(6);
+			$(newTable[6]).find(".iposition").html(7);
+			$(newTable[7]).find(".iposition").html(8);
+			$(newTable[8]).find(".iposition").html(9);
+			$(newTable[9]).find(".iposition").html(10);
+			$(newTable[10]).find(".iposition").html(11);
+			$(newTable[11]).find(".iposition").html(12);
+			$(newTable[12]).find(".iposition").html(13);
+			$(newTable[13]).find(".iposition").html(14);
 
 			$(".league-table").html(newTable);
 			return newTable;

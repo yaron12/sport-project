@@ -6,7 +6,7 @@ function getLocalStorage($scope) {
 
   	var myData = JSON.parse(localStorage.getItem("myData"));
   	
-  	console.log(myData)
+  	console.log(myData);
 	//alert("Page is loaded");
 	
 	

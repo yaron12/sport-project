@@ -257,7 +257,7 @@ footer .copyrighting {
 		width: 90%;
 		margin: 0 auto;
 	}
-	li img,li p{
+	.circleIcon li img,li p{
 			display: none;
 		}
 }

@@ -1,4 +1,4 @@
-(function() {
+/*(function() {
 	var app = angular.module("app");
 	app.controller("saveMachResult", saveMachResult);
 
@@ -12,3 +12,4 @@
 		localStorage.setItem("myData", JSON.stringify(goals));	
 		};
 })();
+*/
